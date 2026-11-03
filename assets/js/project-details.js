@@ -70,6 +70,30 @@
     main.push(grid);
   }
 
+  if (project.video) {
+    const block = el('div', 'project-video');
+
+    const frame = el('div', 'phone-frame');
+    const video = el('video');
+    video.src = project.video.src;
+    if (project.video.poster) video.poster = project.video.poster;
+    video.controls = true;
+    video.muted = true;          // the recording has no sound
+    video.playsInline = true;    // play in place on iPhone instead of going fullscreen
+    video.preload = 'metadata';  // don't download the whole file until the visitor presses play
+    video.setAttribute('aria-label', 'Demo video: ' + project.title);
+    frame.append(video);
+
+    const text = el('div', 'project-video-text');
+    const label = el('span', 'project-video-label');
+    label.append(icon('play-circle'), document.createTextNode(' Feature demo'));
+    text.append(label, el('h2', null, 'See it in action'));
+    if (project.video.caption) text.append(el('p', null, project.video.caption));
+
+    block.append(frame, text);
+    main.push(block);
+  }
+
   main.push(el('h2', null, 'What I did'));
   const list = el('ul', 'contribution-list');
   project.contributions.forEach(text => {

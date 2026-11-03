@@ -19,6 +19,8 @@
  *   contributions What you did (array of strings)
  *   tech          Technologies used (array of strings)
  *   link          External link (optional): { url, label }
+ *   video         Demo video (optional): { src, poster, caption }
+ *                 src/poster are paths inside this repo, e.g. "assets/video/name.mp4"
  */
 window.PROJECTS = [
   {
@@ -113,7 +115,12 @@ window.PROJECTS = [
       "Refactored and enhanced existing APIs into a cleaner layered architecture while preserving legacy routes and response formats for production compatibility",
       "Integrated PostgreSQL/PostGIS queries to handle geospatial data, facility boundaries, map pins, and location-based filtering"
     ],
-    tech: ["REST APIs", "Layered Architecture", "PostgreSQL", "PostGIS", "GIS"]
+    tech: ["REST APIs", "Layered Architecture", "PostgreSQL", "PostGIS", "GIS"],
+    video: {
+      src: "assets/video/moe-gis-demo.mp4",
+      poster: "assets/img/moe-gis-demo-poster.jpg",
+      caption: "A short preview of the feature I worked on in the Ministry of Education mobile app: searching the educational facilities map, filtering schools by education level and district, viewing statistics per educational district, and browsing facilities on the map."
+    }
   },
   {
     id: "medsal",

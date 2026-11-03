@@ -1153,6 +1153,21 @@ section,
   color: color-mix(in srgb, var(--accent-color), #000 25%);
 }
 
+.projects .project-badge {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 50px;
+  color: #1d1d1d;
+  background-color: var(--accent-color);
+}
+
 .projects .project-client {
   font-family: var(--nav-font);
   font-size: 13px;
@@ -1469,6 +1484,70 @@ section,
   display: block;
   font-size: 14px;
   line-height: 1.5;
+}
+
+/* Demo video shown in a phone-style frame (recordings are portrait phone screens) */
+.project-details .project-video {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 10px 0 44px 0;
+  padding: 30px;
+  border-radius: 16px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+}
+
+.project-details .phone-frame {
+  flex-shrink: 0;
+  width: 270px;
+  padding: 10px;
+  border-radius: 36px;
+  background: #111111;
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.45);
+}
+
+.project-details .phone-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 384 / 832;
+  border-radius: 27px;
+  background: #000000;
+}
+
+.project-details .project-video-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: color-mix(in srgb, var(--accent-color), #000 25%);
+  margin-bottom: 8px;
+}
+
+.project-details .project-video-text h2 {
+  margin-bottom: 12px;
+}
+
+.project-details .project-video-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .project-details .project-video {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .project-details .phone-frame {
+    width: min(260px, 80%);
+  }
 }
 
 .project-details .contribution-list {
