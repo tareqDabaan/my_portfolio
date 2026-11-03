@@ -28,11 +28,21 @@
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
   function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
+    const isOpen = document.querySelector('body').classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
+    mobileNavToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
+  mobileNavToggleBtn.setAttribute('aria-expanded', 'false');
   mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+
+  /**
+   * Keep the footer copyright year current
+   */
+  const copyrightYear = document.querySelector('#copyright-year');
+  if (copyrightYear) {
+    copyrightYear.textContent = new Date().getFullYear();
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
