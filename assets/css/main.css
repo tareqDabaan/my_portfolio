@@ -1235,6 +1235,70 @@ section,
   outline: none;
 }
 
+/* Featured (wide) project card */
+.projects .project-card-featured {
+  padding: 36px 40px;
+  background-image: linear-gradient(120deg, color-mix(in srgb, var(--accent-color), transparent 90%), transparent 55%);
+}
+
+.projects .project-card-featured h4 {
+  font-size: 24px;
+}
+
+.projects .project-card-featured .featured-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.projects .project-card-featured .featured-top .project-icon {
+  margin-bottom: 0;
+}
+
+.projects .project-card-featured .project-badge {
+  position: static;
+}
+
+.projects .project-card-featured p {
+  margin-bottom: 0;
+}
+
+.projects .featured-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.projects .featured-points li {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+  padding: 7px 0;
+}
+
+.projects .featured-points i {
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1.3;
+  color: color-mix(in srgb, var(--accent-color), #000 20%);
+}
+
+.projects .project-card-featured .project-link {
+  margin-top: 24px;
+}
+
+@media (max-width: 575px) {
+  .projects .project-card-featured {
+    padding: 30px 24px;
+  }
+
+  .projects .project-card-featured h4 {
+    font-size: 21px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Certificates Section
 --------------------------------------------------------------*/

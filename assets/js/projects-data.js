@@ -8,7 +8,8 @@
  * Fields:
  *   id            URL id used in project.html?id=...
  *   title         Project name
- *   client        Client or owner shown above the title
+ *   client        Client or owner (shown above the title and in the info box; optional)
+ *   eyebrow       Text shown above the title instead of the client (optional)
  *   icon          Bootstrap Icons name (without the "bi-" prefix)
  *   type          "Professional", "Personal" or "Freelance"
  *   role          Your role on the project
@@ -23,6 +24,36 @@
  *                 src/poster are paths inside this repo, e.g. "assets/video/name.mp4"
  */
 window.PROJECTS = [
+  {
+    id: "hr-ai-assistant",
+    title: "AI-Powered HR Assistant",
+    eyebrow: "SUHOB \u00b7 Proof of concept",
+    icon: "robot",
+    type: "Professional (proof of concept)",
+    role: ".NET Backend Developer",
+    company: "SUHOB Integrated Computer Solutions",
+    overview: [
+      "A bilingual (English and Arabic) HR assistant for employees. An employee types or speaks a request in the mobile app, such as booking sick leave, checking this month's attendance or asking about a company policy. An AI agent understands the request and calls the backend to apply the real HR rules, then answers by text or by voice. Policy answers cite the company document and page they came from.",
+      "I designed and built the .NET 9 backend: the security and business-rules layer between the Flutter app and the LangChain AI agent. The AI decides what the user is asking for; the backend decides who the user is (from their Microsoft Entra ID token) and whether they are allowed (from the HR rules and roles in the database). The AI agent, the mobile app and the Azure setup were built by teammates, and I integrated with all three."
+    ],
+    highlights: [
+      { value: "~15", label: "API endpoints, plus an admin portal and 9 SQL tables" },
+      { value: "Text & voice", label: "Real-time chat and speech-to-speech, in English and Arabic" },
+      { value: "~300", label: "Automated checks across 4 test suites" }
+    ],
+    contributions: [
+      "Implemented Microsoft Entra ID authentication with two separate schemes on one app registration: JWT Bearer for the mobile app and the AI agent, and OpenID Connect with cookies for the admin portal",
+      "Built database-backed role-based access control (Employee, Approver, Admin) checked on every request, so role changes apply immediately and are audit-logged; the agent's tool calls reuse the user's own token, so the AI can never act beyond the user's permissions",
+      "Built a WebSocket chat endpoint that streams the agent's answer token by token by relaying its Server-Sent Events stream, with server-owned, resumable conversations and every message saved",
+      "Built a bidirectional WebSocket voice relay to the AI team's real-time voice service (Azure OpenAI real-time), streaming audio both ways with secrets added server-side, one live session per user, retry with backoff and keep-alive",
+      "Added English/Arabic speech-to-text with Azure AI Speech and Azure Blob Storage, and diagnosed and fixed production failures from server logs",
+      "Implemented concurrency-safe leave management (balances, pending reservations and an approval workflow), with a row-level lock so two simultaneous requests can't both pass the balance check",
+      "Built the attendance API for the agent's tools, with team-based data scoping, per-user rate limiting, audit logging and bilingual fuzzy name search that normalizes Arabic spelling variants",
+      "Integrated the agent's retrieval-augmented generation (RAG) citations: relayed sources to the app in real time, saved them with each answer, issued fresh time-limited links on demand, and built an admin library for the documents the AI answers from",
+      "Wrote 4 automated test suites (~300 checks) with a mock AI agent, plus Postman collections and the API documentation the mobile and AI teams built against"
+    ],
+    tech: [".NET 9", "ASP.NET Core", "Razor Pages", "Microsoft Entra ID", "OpenID Connect", "JWT", "WebSockets", "Server-Sent Events", "SQL", "Azure AI Speech", "Azure Blob Storage", "RAG integration"]
+  },
   {
     id: "moh",
     title: "KPI Data Entry & Data Warehouse Integration",

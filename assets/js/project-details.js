@@ -51,7 +51,7 @@
   document.title = project.title + ' | Tareq Dabaan';
   titleEl.textContent = project.title;
   crumbEl.textContent = project.title;
-  clientEl.textContent = project.client;
+  clientEl.textContent = project.eyebrow || project.client || '';
   iconEl.replaceChildren(icon(project.icon));
 
   // Main column: overview, highlights, contributions
