@@ -87,32 +87,59 @@
     <main class="main">
       <!-- Hero Section -->
       <section id="hero" class="hero section dark-background">
-        <img src="assets/img/working-1.jpg" alt="" data-aos="fade-in" />
+        <div class="container">
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-6 hero-text" data-aos="fade-up" data-aos-delay="100">
+              <span class="hero-greeting">Hi, I'm</span>
+              <h1>Tareq Dabaan</h1>
+              <p class="hero-role">
+                Software Engineer <span class="sep">&middot;</span> ASP.NET Core
+                <span class="sep">&middot;</span> Backend &amp; Integrations
+              </p>
+              <p class="hero-tagline">
+                I design and build scalable systems, clean APIs and reliable
+                integrations for government and enterprise platforms in Kuwait.
+              </p>
 
-        <div
-          class="container text-center"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <span class="hero-greeting">Hi, I'm</span>
-          <h1>Tareq Dabaan</h1>
-          <p class="hero-role">
-            Software Engineer <span class="sep">&middot;</span> ASP.NET Core
-            <span class="sep">&middot;</span> Backend &amp; Integrations
-          </p>
-          <p class="hero-tagline">
-            I design and build scalable systems, clean APIs and reliable
-            integrations for government and enterprise platforms in Kuwait.
-          </p>
+              <div class="hero-actions">
+                <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="btn-download-cv"><i class="bi bi-download"></i> Download CV</a>
+                <a href="assets/Tareq-Dabaan-CV.pdf" target="_blank" rel="noopener" class="btn-view-cv"><i class="bi bi-eye"></i> View CV</a>
+              </div>
 
-          <div class="hero-actions">
-            <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="btn-download-cv"><i class="bi bi-download"></i> Download CV</a>
-            <a href="assets/Tareq-Dabaan-CV.pdf" target="_blank" rel="noopener" class="btn-view-cv"><i class="bi bi-eye"></i> View CV</a>
+              <div class="hero-social">
+                <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/tareqDabaan" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://wa.me/96590956148" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+              <figure
+                class="hero-code"
+                role="img"
+                aria-label="Code-style summary: Tareq Dabaan, Software Engineer based in Kuwait City with 3+ years of experience, working with .NET 9, ASP.NET Core, SQL and Azure, certified as AWS Developer, Azure Database Administrator and Azure AI Engineer."
+              >
+                <div class="hero-code-bar" aria-hidden="true"><span></span><span></span><span></span><em>TareqDabaan.cs</em></div>
+<pre aria-hidden="true"><span class="k">public class</span> <span class="t">SoftwareEngineer</span>
+{
+    <span class="k">public string</span> <span class="p">Name</span>  =&gt; <span class="s">"Tareq Dabaan"</span>;
+    <span class="k">public string</span> <span class="p">Based</span> =&gt; <span class="s">"Kuwait City"</span>;
+    <span class="k">public int</span>    <span class="p">Years</span> =&gt; <span class="n">3</span>; <span class="c">// and counting</span>
+
+    <span class="k">public string</span>[] <span class="p">Stack</span> =&gt;
+        [<span class="s">".NET 9"</span>, <span class="s">"ASP.NET Core"</span>,
+         <span class="s">"SQL"</span>, <span class="s">"Azure"</span>];
+
+    <span class="k">public string</span>[] <span class="p">Certified</span> =&gt;
+        [<span class="s">"AWS Developer"</span>, <span class="s">"Azure DBA"</span>,
+         <span class="s">"Azure AI Engineer"</span>];
+
+    <span class="k">public string</span> <span class="p">Focus</span> =&gt;
+        <span class="s">"Systems, APIs &amp; integrations"</span>;
+}</pre>
+              </figure>
+            </div>
           </div>
-
-          <a href="#about" class="btn-scroll" title="Scroll down" aria-label="Scroll to About section"
-            ><i class="bi bi-chevron-down"></i
-          ></a>
         </div>
       </section>
       <!-- /Hero Section -->
@@ -716,66 +743,51 @@
         </div>
         <!-- End Section Title -->
 
-        <div class="container">
-          <div class="row gy-4 justify-content-center">
-            <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="skill-card">
-                <div class="skill-icon"><i class="bi bi-server"></i></div>
-                <h3>Backend</h3>
-                <ul class="tag-list">
-                  <li>ASP.NET Core</li>
-                  <li>ASP.NET MVC</li>
-                  <li>ASP.NET Web API</li>
-                  <li>Python</li>
-                  <li>Django</li>
-                  <li>Django REST Framework</li>
-                </ul>
-              </div>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="skills-list">
+            <div class="skills-row">
+              <h3>Backend</h3>
+              <ul class="tag-list">
+                <li>ASP.NET Core</li>
+                <li>ASP.NET MVC</li>
+                <li>ASP.NET Web API</li>
+                <li>Python</li>
+                <li>Django</li>
+                <li>Django REST Framework</li>
+              </ul>
             </div>
-            <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-              <div class="skill-card">
-                <div class="skill-icon"><i class="bi bi-database"></i></div>
-                <h3>Databases</h3>
-                <ul class="tag-list">
-                  <li>SQL</li>
-                  <li>MySQL</li>
-                  <li>PostgreSQL</li>
-                </ul>
-              </div>
+            <div class="skills-row">
+              <h3>Databases</h3>
+              <ul class="tag-list">
+                <li>SQL</li>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+              </ul>
             </div>
-            <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-              <div class="skill-card">
-                <div class="skill-icon"><i class="bi bi-cloud"></i></div>
-                <h3>Cloud &amp; DevOps</h3>
-                <ul class="tag-list">
-                  <li>Microsoft Azure</li>
-                  <li>Docker &amp; Containerization</li>
-                </ul>
-              </div>
+            <div class="skills-row">
+              <h3>Cloud &amp; DevOps</h3>
+              <ul class="tag-list">
+                <li>Microsoft Azure</li>
+                <li>Docker &amp; Containerization</li>
+              </ul>
             </div>
-            <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="skill-card">
-                <div class="skill-icon"><i class="bi bi-plug"></i></div>
-                <h3>API Tools</h3>
-                <ul class="tag-list">
-                  <li>Postman</li>
-                  <li>Swagger</li>
-                </ul>
-              </div>
+            <div class="skills-row">
+              <h3>API Tools</h3>
+              <ul class="tag-list">
+                <li>Postman</li>
+                <li>Swagger</li>
+              </ul>
             </div>
-            <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-              <div class="skill-card">
-                <div class="skill-icon"><i class="bi bi-diagram-3"></i></div>
-                <h3>Practices</h3>
-                <ul class="tag-list">
-                  <li>Git</li>
-                  <li>Jira</li>
-                  <li>Agile Methodologies</li>
-                  <li>UML Diagrams</li>
-                  <li>Design Patterns</li>
-                  <li>OOP</li>
-                </ul>
-              </div>
+            <div class="skills-row">
+              <h3>Practices</h3>
+              <ul class="tag-list">
+                <li>Git</li>
+                <li>Jira</li>
+                <li>Agile Methodologies</li>
+                <li>UML Diagrams</li>
+                <li>Design Patterns</li>
+                <li>OOP</li>
+              </ul>
             </div>
           </div>
         </div>
