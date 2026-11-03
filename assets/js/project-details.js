@@ -70,29 +70,42 @@
     main.push(grid);
   }
 
-  if (project.video) {
-    const block = el('div', 'project-video');
+  const videos = project.videos || (project.video ? [project.video] : []);
+  if (videos.length > 1) main.push(el('h2', 'project-videos-title', 'See it in action'));
 
-    const frame = el('div', 'phone-frame');
+  videos.forEach(v => {
+    const isBrowser = v.frame === 'browser';
+    const block = el('div', 'project-video' + (isBrowser ? ' is-browser' : ''));
+
+    const frame = el('div', isBrowser ? 'browser-frame' : 'phone-frame');
+    if (isBrowser) {
+      const bar = el('div', 'browser-bar');
+      bar.setAttribute('aria-hidden', 'true');
+      bar.append(el('span'), el('span'), el('span'));
+      frame.append(bar);
+    }
     const video = el('video');
-    video.src = project.video.src;
-    if (project.video.poster) video.poster = project.video.poster;
+    video.src = v.src;
+    if (v.poster) video.poster = v.poster;
+    if (v.width && v.height) video.style.aspectRatio = v.width + ' / ' + v.height;
     video.controls = true;
-    video.muted = true;          // the recording has no sound
+    video.muted = !v.sound;      // silent recordings play muted; ones with speech keep their sound
     video.playsInline = true;    // play in place on iPhone instead of going fullscreen
     video.preload = 'metadata';  // don't download the whole file until the visitor presses play
-    video.setAttribute('aria-label', 'Demo video: ' + project.title);
+    video.setAttribute('aria-label', 'Demo video: ' + (v.title || project.title));
     frame.append(video);
 
     const text = el('div', 'project-video-text');
     const label = el('span', 'project-video-label');
-    label.append(icon('play-circle'), document.createTextNode(' Feature demo'));
-    text.append(label, el('h2', null, 'See it in action'));
-    if (project.video.caption) text.append(el('p', null, project.video.caption));
+    label.append(icon(v.sound ? 'volume-up' : 'play-circle'), document.createTextNode(' ' + (v.title || 'Feature demo')));
+    text.append(label);
+    if (videos.length === 1) text.append(el('h2', null, 'See it in action'));
+    if (v.caption) text.append(el('p', null, v.caption));
 
-    block.append(frame, text);
+    // Wide desktop recordings sit under their description; phone recordings sit beside it
+    if (isBrowser) block.append(text, frame); else block.append(frame, text);
     main.push(block);
-  }
+  });
 
   main.push(el('h2', null, 'What I did'));
   const list = el('ul', 'contribution-list');

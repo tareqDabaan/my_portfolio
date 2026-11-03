@@ -1515,6 +1515,60 @@ section,
   background: #000000;
 }
 
+/* Desktop recordings: shown full width under their description, in a browser-window frame */
+.project-details .project-videos-title {
+  margin-top: 10px;
+}
+
+.project-details .project-video + .project-video {
+  margin-top: -20px;
+}
+
+.project-details .project-video.is-browser {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.project-details .browser-frame {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111111;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.45);
+}
+
+.project-details .browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 14px;
+  background: #1f1f22;
+}
+
+.project-details .browser-bar span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.project-details .browser-bar span:nth-child(2) {
+  background: #febc2e;
+}
+
+.project-details .browser-bar span:nth-child(3) {
+  background: #28c840;
+}
+
+.project-details .browser-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000000;
+}
+
 .project-details .project-video-label {
   display: inline-flex;
   align-items: center;

@@ -20,8 +20,13 @@
  *   contributions What you did (array of strings)
  *   tech          Technologies used (array of strings)
  *   link          External link (optional): { url, label }
- *   video         Demo video (optional): { src, poster, caption }
+ *   videos        Demo videos (optional), shown under the overview in this order:
+ *                 [{ title, src, poster, caption, frame, width, height, sound }]
+ *                   frame:  "phone" (portrait phone recording, default) or "browser" (desktop recording)
+ *                   width/height: the video's pixel size, so the frame keeps the right shape
+ *                   sound:  true if the video has audio worth hearing (otherwise it plays muted)
  *                 src/poster are paths inside this repo, e.g. "assets/video/name.mp4"
+ *   video         A single demo video (older format, same fields as one item of "videos")
  */
 window.PROJECTS = [
   {
@@ -52,7 +57,28 @@ window.PROJECTS = [
       "Integrated the agent's retrieval-augmented generation (RAG) citations: relayed sources to the app in real time, saved them with each answer, issued fresh time-limited links on demand, and built an admin library for the documents the AI answers from",
       "Wrote 4 automated test suites (~300 checks) with a mock AI agent, plus Postman collections and the API documentation the mobile and AI teams built against"
     ],
-    tech: [".NET 9", "ASP.NET Core", "Razor Pages", "Microsoft Entra ID", "OpenID Connect", "JWT", "WebSockets", "Server-Sent Events", "SQL", "Azure AI Speech", "Azure Blob Storage", "RAG integration"]
+    tech: [".NET 9", "ASP.NET Core", "Razor Pages", "Microsoft Entra ID", "OpenID Connect", "JWT", "WebSockets", "Server-Sent Events", "SQL", "Azure AI Speech", "Azure Blob Storage", "RAG integration"],
+    videos: [
+      {
+        title: "Voice assistant in Arabic",
+        src: "assets/video/hr-voice-demo.mp4",
+        poster: "assets/img/hr-voice-demo-poster.jpg",
+        frame: "phone",
+        width: 540,
+        height: 1158,
+        sound: true,
+        caption: "A real-time, speech-to-speech conversation in Arabic. The assistant checks the employee's leave balance, asks for the reason behind a sick-leave request and submits it, then summarizes last week's attendance aloud while showing the report on screen. Turn your sound on to hear it."
+      },
+      {
+        title: "Admin portal: leave approvals",
+        src: "assets/video/hr-dashboard-demo.mp4",
+        poster: "assets/img/hr-dashboard-demo-poster.jpg",
+        frame: "browser",
+        width: 1280,
+        height: 634,
+        caption: "The admin web portal: signing in with Microsoft Entra ID, then working through the leave approval queue. A comment is required on every decision, approvers can't decide their own requests, and decided requests move to the recently decided list. Employee names, emails and comments are blurred for privacy."
+      }
+    ]
   },
   {
     id: "moh",
@@ -150,6 +176,8 @@ window.PROJECTS = [
     video: {
       src: "assets/video/moe-gis-demo.mp4",
       poster: "assets/img/moe-gis-demo-poster.jpg",
+      width: 384,
+      height: 832,
       caption: "A short preview of the feature I worked on in the Ministry of Education mobile app: searching the educational facilities map, filtering schools by education level and district, viewing statistics per educational district, and browsing facilities on the map."
     }
   },
