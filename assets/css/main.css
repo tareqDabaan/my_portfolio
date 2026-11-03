@@ -1064,19 +1064,6 @@ section,
   color: #1d1d1d;
 }
 
-.resume .skills-group {
-  margin-bottom: 18px;
-}
-
-.resume .skills-group h4 {
-  font-size: 15px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin-bottom: 10px;
-}
-
 /* Shared pill list used for skills and project tech stacks */
 .tag-list {
   list-style: none;
@@ -1233,6 +1220,55 @@ section,
 
 .projects .project-link:focus-visible {
   outline: none;
+}
+
+/*--------------------------------------------------------------
+# Skills Section
+--------------------------------------------------------------*/
+.skills .skill-card {
+  width: 100%;
+  padding: 28px 30px 30px 30px;
+  border-radius: 12px;
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 3px solid var(--accent-color);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills .skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.skills .skill-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 82%);
+}
+
+.skills .skill-icon i {
+  font-size: 24px;
+  line-height: 0;
+  color: color-mix(in srgb, var(--accent-color), #000 25%);
+}
+
+.skills .skill-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.skills .skill-card .tag-list li {
+  font-size: 14px;
+  padding: 8px 14px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+  border-color: transparent;
 }
 
 /*--------------------------------------------------------------
