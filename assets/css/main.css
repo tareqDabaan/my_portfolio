@@ -1153,21 +1153,6 @@ section,
   color: color-mix(in srgb, var(--accent-color), #000 25%);
 }
 
-.projects .project-badge {
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 5px 10px;
-  border-radius: 50px;
-  color: #1d1d1d;
-  background-color: var(--accent-color);
-}
-
 .projects .project-client {
   font-family: var(--nav-font);
   font-size: 13px;
@@ -1375,111 +1360,115 @@ section,
 }
 
 /*--------------------------------------------------------------
-# "Watch the demos" strip (home page) and pop-up video player
+# Video previews on project cards (home page) and pop-up video player
 --------------------------------------------------------------*/
-.projects .demo-strip {
-  margin-bottom: 60px;
-}
-
-.projects .demo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.projects .demo-tile {
+.projects .card-media {
+  position: relative;
+  z-index: 2;                      /* above the card's stretched "View details" link */
   display: block;
-  width: 100%;
+  width: calc(100% + 60px);
+  margin: -30px -30px 22px -30px;
   padding: 0;
   border: 0;
-  background: none;
-  text-align: left;
-  cursor: pointer;
-  border-radius: 14px;
-}
-
-.projects .demo-tile:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--accent-color), transparent 30%);
-  outline-offset: 3px;
-}
-
-.projects .demo-thumb {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  border-radius: 14px;
+  aspect-ratio: 2 / 1;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 9px 9px 0 0;
+  cursor: pointer;
   background:
-    radial-gradient(circle at 25% 15%, color-mix(in srgb, var(--accent-color), transparent 72%), transparent 55%),
+    radial-gradient(circle at 20% 15%, color-mix(in srgb, var(--accent-color), transparent 72%), transparent 55%),
     radial-gradient(circle at 85% 90%, rgba(80, 120, 255, 0.22), transparent 50%),
     #0d1117;
-  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.35);
 }
 
-/* phone recordings: the preview sits in a small phone frame */
-.projects .thumb-phone {
-  height: 86%;
-  margin-top: 14%;
-  padding: 4px;
-  border-radius: 18px;
+.projects .card-media:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent-color), transparent 30%);
+  outline-offset: -3px;
+}
+
+/* phone recording: a small phone frame peeking up from the bottom */
+.projects .card-media .thumb-phone {
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  height: 100%;
+  transform: translateX(-50%);
+  padding: 3px;
+  border-radius: 16px;
   background: #000000;
   box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6);
-  transition: transform 0.4s ease;
+  transition: margin-top 0.4s ease;
 }
 
-.projects .thumb-phone img {
+.projects .card-media .thumb-phone img {
   display: block;
   height: 100%;
   width: auto;
-  border-radius: 14px;
+  border-radius: 13px;
 }
 
-/* desktop recordings: the preview sits in a small browser window */
-.projects .thumb-browser {
-  width: 84%;
-  margin-top: 8%;
-  border-radius: 8px;
+/* desktop recording: a small browser window */
+.projects .card-media .thumb-browser {
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  width: 74%;
+  transform: translateX(-50%);
+  border-radius: 7px;
   overflow: hidden;
   background: #1f1f22;
   box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6);
-  transition: transform 0.4s ease;
+  transition: margin-top 0.4s ease;
 }
 
-.projects .thumb-bar {
-  display: flex;
-  gap: 4px;
-  padding: 6px 8px;
-}
-
-.projects .thumb-bar span {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ff5f57;
-}
-
-.projects .thumb-bar span:nth-child(2) {
-  background: #febc2e;
-}
-
-.projects .thumb-bar span:nth-child(3) {
-  background: #28c840;
-}
-
-.projects .thumb-browser img {
+.projects .card-media .thumb-browser img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.projects .demo-play {
+.projects .card-media .thumb-bar {
+  display: flex;
+  gap: 4px;
+  padding: 5px 7px;
+}
+
+.projects .card-media .thumb-bar span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.projects .card-media .thumb-bar span:nth-child(2) {
+  background: #febc2e;
+}
+
+.projects .card-media .thumb-bar span:nth-child(3) {
+  background: #28c840;
+}
+
+/* two videos: browser window behind on the left, phone in front on the right */
+.projects .card-media.is-multi .thumb-browser {
+  left: 8%;
+  top: 16%;
+  width: 64%;
+  transform: none;
+}
+
+.projects .card-media.is-multi .thumb-phone {
+  left: auto;
+  right: 10%;
+  top: 9%;
+  transform: none;
+}
+
+.projects .media-play {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 60px;
-  height: 60px;
+  z-index: 1;
+  width: 54px;
+  height: 54px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   display: flex;
@@ -1487,20 +1476,21 @@ section,
   justify-content: center;
   color: #1d1d1d;
   background: var(--accent-color);
-  box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent-color), transparent 72%), 0 10px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent-color), transparent 72%), 0 10px 24px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.projects .demo-play i {
-  font-size: 30px;
+.projects .media-play i {
+  font-size: 26px;
   line-height: 0;
-  margin-left: 4px;
+  margin-left: 3px;
 }
 
-.projects .demo-duration {
+.projects .media-tag {
   position: absolute;
   right: 12px;
   bottom: 12px;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   gap: 2px;
@@ -1509,86 +1499,17 @@ section,
   font-size: 12px;
   font-weight: 600;
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.72);
 }
 
-.projects .demo-tile:hover .demo-play {
+.projects .card-media:hover .media-play {
   transform: translate(-50%, -50%) scale(1.1);
-  box-shadow: 0 0 0 12px color-mix(in srgb, var(--accent-color), transparent 70%), 0 10px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 11px color-mix(in srgb, var(--accent-color), transparent 70%), 0 10px 24px rgba(0, 0, 0, 0.4);
 }
 
-.projects .demo-tile:hover .thumb-phone,
-.projects .demo-tile:hover .thumb-browser {
-  transform: translateY(-4px);
-}
-
-.projects .demo-info {
-  padding: 14px 4px 0 4px;
-}
-
-.demo-project {
-  display: block;
-  font-family: var(--nav-font);
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  margin-bottom: 4px;
-}
-
-.projects .demo-info h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.demo-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--heading-color);
-  border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 1px;
-}
-
-.demo-link i {
-  font-size: 13px;
-  transition: transform 0.3s;
-}
-
-.demo-link:hover {
-  color: color-mix(in srgb, var(--accent-color), #000 25%);
-}
-
-.demo-link:hover i {
-  transform: translateX(3px);
-}
-
-/* tablets and phones: a row you can swipe sideways */
-@media (max-width: 991px) {
-  .projects .demo-grid {
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: 46%;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 10px;
-    scrollbar-width: thin;
-  }
-
-  .projects .demo-item {
-    scroll-snap-align: start;
-  }
-}
-
-@media (max-width: 575px) {
-  .projects .demo-grid {
-    grid-auto-columns: 84%;
-    gap: 16px;
-  }
+.projects .card-media:hover .thumb-phone,
+.projects .card-media:hover .thumb-browser {
+  margin-top: -4px;
 }
 
 /* Pop-up player */
@@ -1621,10 +1542,47 @@ section,
   max-width: 100%;
 }
 
+.video-modal-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.video-modal-tabs[hidden] {
+  display: none;
+}
+
+.video-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.video-tab:hover {
+  border-color: var(--accent-color);
+}
+
+.video-tab[aria-selected="true"] {
+  color: #1d1d1d;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
 .video-modal-player {
   display: block;
   width: min(1100px, 92vw);
-  max-height: 72vh;
+  max-height: 68vh;
   border-radius: 12px;
   background: #000000;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
@@ -1632,7 +1590,7 @@ section,
 
 .video-modal-box.is-portrait .video-modal-player {
   width: auto;
-  height: min(72vh, 760px);
+  height: min(68vh, 760px);
   max-width: 92vw;
   border-radius: 22px;
   border: 6px solid #111111;
@@ -1640,12 +1598,19 @@ section,
 
 .video-modal-caption {
   text-align: center;
-  margin-top: 16px;
+  margin-top: 14px;
   color: #ffffff;
 }
 
-.video-modal-caption .demo-project {
+.video-modal-label {
+  display: block;
+  font-family: var(--nav-font);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   color: var(--accent-color);
+  margin-bottom: 4px;
 }
 
 .video-modal-caption h3 {
@@ -1655,19 +1620,26 @@ section,
   margin-bottom: 10px;
 }
 
-.video-modal-caption .demo-link {
+.video-modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
   color: #ffffff;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 1px;
 }
 
-.video-modal-caption .demo-link:hover {
+.video-modal-link:hover {
   color: var(--accent-color);
 }
 
 .video-modal-close {
-  position: absolute;
-  top: -14px;
-  right: -14px;
-  z-index: 2;
+  position: fixed;                 /* top-right corner of the screen, clear of the tabs and video */
+  top: 20px;
+  right: 20px;
+  z-index: 3;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -1688,8 +1660,13 @@ section,
 
 @media (max-width: 575px) {
   .video-modal-close {
-    top: -10px;
-    right: -6px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .video-tab {
+    font-size: 13px;
+    padding: 6px 12px;
   }
 }
 
