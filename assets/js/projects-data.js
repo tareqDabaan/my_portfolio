@@ -25,6 +25,8 @@
  *                   frame:  "phone" (portrait phone recording, default) or "browser" (desktop recording)
  *                   width/height: the video's pixel size, so the frame keeps the right shape
  *                   sound:  true if the video has audio worth hearing (otherwise it plays muted)
+ *                   duration: length shown on the home page thumbnail, e.g. "1:41"
+ *                 Every video also appears in the "Watch the demos" strip on the home page.
  *                 src/poster are paths inside this repo, e.g. "assets/video/name.mp4"
  *   video         A single demo video (older format, same fields as one item of "videos")
  */
@@ -62,6 +64,7 @@ window.PROJECTS = [
       {
         title: "Voice assistant in Arabic",
         src: "assets/video/hr-voice-demo.mp4",
+        duration: "1:41",
         poster: "assets/img/hr-voice-demo-poster.jpg",
         frame: "phone",
         width: 540,
@@ -72,6 +75,7 @@ window.PROJECTS = [
       {
         title: "Admin portal: leave approvals",
         src: "assets/video/hr-dashboard-demo.mp4",
+        duration: "0:31",
         poster: "assets/img/hr-dashboard-demo-poster.jpg",
         frame: "browser",
         width: 1280,
@@ -175,6 +179,7 @@ window.PROJECTS = [
     tech: ["REST APIs", "Layered Architecture", "PostgreSQL", "PostGIS", "GIS"],
     video: {
       src: "assets/video/moe-gis-demo.mp4",
+      duration: "1:22",
       poster: "assets/img/moe-gis-demo-poster.jpg",
       width: 384,
       height: 832,
