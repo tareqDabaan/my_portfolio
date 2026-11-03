@@ -396,6 +396,7 @@
             <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
               <article class="project-card">
                 <div class="project-icon"><i class="bi bi-robot"></i></div>
+                <span class="project-badge"><i class="bi bi-play-circle-fill"></i> Video demos</span>
                 <span class="project-client">SUHOB &middot; Proof of concept</span>
                 <h4>AI-Powered HR Assistant</h4>
                 <p>
@@ -490,6 +491,7 @@
             <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
               <article class="project-card">
                 <div class="project-icon"><i class="bi bi-geo-alt"></i></div>
+                <span class="project-badge"><i class="bi bi-play-circle-fill"></i> Video demo</span>
                 <span class="project-client">Ministry of Education, Kuwait</span>
                 <h4>GIS Mapping Platform</h4>
                 <p>
@@ -605,6 +607,19 @@
         </div>
       </section>
       <!-- /Projects Section -->
+
+      <!-- Demos Section: player and tabs are built from the videos in assets/js/projects-data.js -->
+      <section id="demos" class="demos section dark-background">
+        <div class="container section-title" data-aos="fade-up">
+          <span class="description-title">Demos</span>
+          <h2>See it in action</h2>
+          <p>Short recordings of features I built. Pick a demo and press play.</p>
+        </div>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div id="demo-player" class="demo-player"></div>
+        </div>
+      </section>
+      <!-- /Demos Section -->
 
       <!-- Certificates Section -->
       <section id="certificates" class="certificates section light-background">
@@ -805,9 +820,9 @@
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-    <!-- Project data and the video previews on the project cards -->
+    <!-- Project data and the "See it in action" demos section -->
     <script src="assets/js/projects-data.js"></script>
-    <script src="assets/js/project-videos.js"></script>
+    <script src="assets/js/demo-section.js"></script>
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
