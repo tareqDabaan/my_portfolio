@@ -157,7 +157,8 @@ window.PROJECTS = [
       "Built a smart cart feature that shows customers product recommendations directly in the cart",
       "Wrote Python web-scraping scripts to collect data for analytics"
     ],
-    tech: ["Shopify", "Liquid", "HTML", "CSS", "Python", "Web Scraping"]
+    tech: ["Shopify", "Liquid", "HTML", "CSS", "Python", "Web Scraping"],
+    link: { url: "https://shopwaba.com/", label: "Visit website" }
   },
   {
     id: "syrian-adventurer",
