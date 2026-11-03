@@ -1375,254 +1375,326 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Demos Section ("See it in action": large player with a tab per video)
+# "Watch the demos" strip (home page) and pop-up video player
 --------------------------------------------------------------*/
-.demos {
-  background-image:
-    radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--accent-color), transparent 85%), transparent 45%),
-    radial-gradient(circle at 90% 100%, rgba(80, 120, 255, 0.14), transparent 45%);
+.projects .demo-strip {
+  margin-bottom: 60px;
 }
 
-.demos .section-title p {
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+.projects .demo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
 
-.demos .demo-tabs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 28px;
-}
-
-.demos .demo-tab {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.04);
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
+.projects .demo-tile {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
   cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  border-radius: 14px;
 }
 
-.demos .demo-tab:hover {
-  border-color: var(--accent-color);
-}
-
-.demos .demo-tab:focus-visible {
+.projects .demo-tile:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--accent-color), transparent 30%);
   outline-offset: 3px;
 }
 
-.demos .demo-tab-time {
-  font-size: 12px;
-  font-weight: 600;
-  opacity: 0.6;
-}
-
-.demos .demo-tab[aria-selected="true"] {
-  color: #1d1d1d;
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-}
-
-.demos .demo-tab[aria-selected="true"] .demo-tab-time {
-  opacity: 0.75;
-}
-
-.demos .demo-stage {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 48px;
-  padding: 40px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.demos .demo-screen {
+.projects .demo-thumb {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 560px;
+  background:
+    radial-gradient(circle at 25% 15%, color-mix(in srgb, var(--accent-color), transparent 72%), transparent 55%),
+    radial-gradient(circle at 85% 90%, rgba(80, 120, 255, 0.22), transparent 50%),
+    #0d1117;
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.35);
 }
 
-.demos .phone-frame {
-  width: 250px;
-  padding: 10px;
-  border-radius: 36px;
+/* phone recordings: the preview sits in a small phone frame */
+.projects .thumb-phone {
+  height: 86%;
+  margin-top: 14%;
+  padding: 4px;
+  border-radius: 18px;
   background: #000000;
-  border: 1px solid #2a2a2a;
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease;
 }
 
-.demos .phone-frame video {
+.projects .thumb-phone img {
   display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 27px;
-  background: #000000;
+  height: 100%;
+  width: auto;
+  border-radius: 14px;
 }
 
-.demos .browser-frame {
-  width: 100%;
-  border-radius: 12px;
+/* desktop recordings: the preview sits in a small browser window */
+.projects .thumb-browser {
+  width: 84%;
+  margin-top: 8%;
+  border-radius: 8px;
   overflow: hidden;
-  background: #111111;
-  border: 1px solid #2a2a2a;
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
-}
-
-.demos .browser-bar {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  height: 30px;
-  padding: 0 14px;
   background: #1f1f22;
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s ease;
 }
 
-.demos .browser-bar span {
-  width: 11px;
-  height: 11px;
+.projects .thumb-bar {
+  display: flex;
+  gap: 4px;
+  padding: 6px 8px;
+}
+
+.projects .thumb-bar span {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #ff5f57;
 }
 
-.demos .browser-bar span:nth-child(2) {
+.projects .thumb-bar span:nth-child(2) {
   background: #febc2e;
 }
 
-.demos .browser-bar span:nth-child(3) {
+.projects .thumb-bar span:nth-child(3) {
   background: #28c840;
 }
 
-.demos .browser-frame video {
+.projects .thumb-browser img {
   display: block;
   width: 100%;
   height: auto;
-  background: #000000;
 }
 
-.demos .demo-label {
+.projects .demo-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1d1d1d;
+  background: var(--accent-color);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent-color), transparent 72%), 0 10px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects .demo-play i {
+  font-size: 30px;
+  line-height: 0;
+  margin-left: 4px;
+}
+
+.projects .demo-duration {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 9px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.projects .demo-tile:hover .demo-play {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 0 12px color-mix(in srgb, var(--accent-color), transparent 70%), 0 10px 24px rgba(0, 0, 0, 0.4);
+}
+
+.projects .demo-tile:hover .thumb-phone,
+.projects .demo-tile:hover .thumb-browser {
+  transform: translateY(-4px);
+}
+
+.projects .demo-info {
+  padding: 14px 4px 0 4px;
+}
+
+.demo-project {
   display: block;
   font-family: var(--nav-font);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--accent-color);
+  letter-spacing: 0.5px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-bottom: 4px;
+}
+
+.projects .demo-info h4 {
+  font-size: 18px;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
-.demos .demo-details h3 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.demos .demo-details p {
-  font-size: 16px;
-  line-height: 1.75;
-  color: color-mix(in srgb, var(--default-color), transparent 22%);
-  margin-bottom: 20px;
-}
-
-.demos .demo-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-
-.demos .demo-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 5px 12px;
-  border-radius: 50px;
-  font-size: 13px;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.demos .demo-link {
+.demo-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--heading-color);
   border-bottom: 2px solid var(--accent-color);
-  padding-bottom: 2px;
+  padding-bottom: 1px;
 }
 
-.demos .demo-link i {
+.demo-link i {
+  font-size: 13px;
   transition: transform 0.3s;
 }
 
-.demos .demo-link:hover {
-  color: var(--accent-color);
+.demo-link:hover {
+  color: color-mix(in srgb, var(--accent-color), #000 25%);
 }
 
-.demos .demo-link:hover i {
-  transform: translateX(4px);
+.demo-link:hover i {
+  transform: translateX(3px);
 }
 
+/* tablets and phones: a row you can swipe sideways */
 @media (max-width: 991px) {
-  .demos .demo-stage {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 28px;
+  .projects .demo-grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 46%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
   }
 
-  .demos .demo-screen {
-    min-height: 0;
-  }
-
-  .demos .demo-details {
-    text-align: center;
-  }
-
-  .demos .demo-meta {
-    justify-content: center;
+  .projects .demo-item {
+    scroll-snap-align: start;
   }
 }
 
 @media (max-width: 575px) {
-  /* tabs become a single row you can swipe */
-  .demos .demo-tabs {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    margin: 0 -12px 22px -12px;
-    padding: 0 12px 6px 12px;
-    scrollbar-width: none;
+  .projects .demo-grid {
+    grid-auto-columns: 84%;
+    gap: 16px;
   }
+}
 
-  .demos .demo-tab {
-    flex-shrink: 0;
-    font-size: 14px;
-    padding: 8px 14px;
-  }
+/* Pop-up player */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 
-  .demos .demo-stage {
-    padding: 20px 16px;
-    border-radius: 16px;
-  }
+.video-modal[hidden] {
+  display: none;
+}
 
-  .demos .phone-frame {
-    width: min(240px, 75vw);
-  }
+.video-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 8, 15, 0.86);
+  backdrop-filter: blur(4px);
+}
 
-  .demos .demo-details h3 {
-    font-size: 22px;
+.video-modal-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+}
+
+.video-modal-player {
+  display: block;
+  width: min(1100px, 92vw);
+  max-height: 72vh;
+  border-radius: 12px;
+  background: #000000;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.video-modal-box.is-portrait .video-modal-player {
+  width: auto;
+  height: min(72vh, 760px);
+  max-width: 92vw;
+  border-radius: 22px;
+  border: 6px solid #111111;
+}
+
+.video-modal-caption {
+  text-align: center;
+  margin-top: 16px;
+  color: #ffffff;
+}
+
+.video-modal-caption .demo-project {
+  color: var(--accent-color);
+}
+
+.video-modal-caption h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.video-modal-caption .demo-link {
+  color: #ffffff;
+}
+
+.video-modal-caption .demo-link:hover {
+  color: var(--accent-color);
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1d1d1d;
+  background: var(--accent-color);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.video-modal-close i {
+  font-size: 16px;
+  line-height: 0;
+}
+
+@media (max-width: 575px) {
+  .video-modal-close {
+    top: -10px;
+    right: -6px;
   }
+}
+
+body.video-modal-open {
+  overflow: hidden;
 }
 
 /*--------------------------------------------------------------
