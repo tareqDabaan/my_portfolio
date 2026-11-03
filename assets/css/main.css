@@ -1021,36 +1021,47 @@ section,
   }
 }
 
-.resume .resume-project {
-  height: 100%;
-  background-color: var(--surface-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  border-radius: 10px;
-  padding: 20px 20px 10px 20px;
-}
-
-.resume .resume-project h6 {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.45;
-  margin-bottom: 12px;
+.resume .role-projects {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 10px 0;
 }
 
-.resume .resume-project h6 i {
-  color: var(--accent-color);
-  font-size: 18px;
-  flex-shrink: 0;
+.resume .role-projects-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin-right: 4px;
 }
 
-.resume .resume-project ul {
-  font-size: 15px;
-  margin-bottom: 0;
+.resume .resume-item .role-project-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 50px;
+  color: var(--heading-color);
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 40%);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
-.resume .resume-project ul li {
-  padding-bottom: 8px;
+.resume .resume-item .role-project-chip i {
+  color: color-mix(in srgb, var(--accent-color), #000 20%);
+}
+
+.resume .resume-item .role-project-chip:hover {
+  color: #1d1d1d;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.resume .resume-item .role-project-chip:hover i {
+  color: #1d1d1d;
 }
 
 .resume .skills-group {
@@ -1107,6 +1118,7 @@ section,
 }
 
 .projects .project-card {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1187,11 +1199,25 @@ section,
 }
 
 .projects .project-link i {
-  font-size: 13px;
+  font-size: 14px;
+  transition: transform 0.3s;
 }
 
-.projects .project-link:hover {
+.projects .project-card:hover .project-link {
   color: color-mix(in srgb, var(--accent-color), #000 25%);
+}
+
+.projects .project-card:hover .project-link i {
+  transform: translateX(4px);
+}
+
+.projects .project-card:focus-within {
+  outline: 3px solid color-mix(in srgb, var(--accent-color), transparent 40%);
+  outline-offset: 3px;
+}
+
+.projects .project-link:focus-visible {
+  outline: none;
 }
 
 /*--------------------------------------------------------------
@@ -1330,6 +1356,290 @@ section,
 
   .certificates .certificate-icon i {
     font-size: 28px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Project Details Page
+--------------------------------------------------------------*/
+.project-title {
+  padding: 150px 0 70px 0;
+  background-image: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--accent-color), transparent 82%), transparent 60%);
+}
+
+.project-title .breadcrumbs {
+  margin-bottom: 28px;
+}
+
+.project-title .breadcrumbs ol {
+  font-size: 14px;
+}
+
+.project-title .breadcrumbs a {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.project-title .breadcrumbs a:hover {
+  color: var(--accent-color);
+}
+
+.project-title .breadcrumbs .current {
+  color: var(--accent-color);
+}
+
+.project-title .project-title-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 18px auto;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-color);
+}
+
+.project-title .project-title-icon i {
+  font-size: 34px;
+  line-height: 0;
+  color: #1d1d1d;
+}
+
+.project-title .project-title-client {
+  font-family: var(--nav-font);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.project-title h1 {
+  max-width: 820px;
+  margin: 0 auto;
+  line-height: 1.25;
+}
+
+@media (max-width: 575px) {
+  .project-title {
+    padding: 120px 0 50px 0;
+  }
+
+  .project-title h1 {
+    font-size: 30px;
+  }
+}
+
+.project-details h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.project-details .project-overview {
+  font-size: 17px;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.project-details .project-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 30px 0 40px 0;
+}
+
+.project-details .highlight {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 60%);
+}
+
+.project-details .highlight-value {
+  display: block;
+  font-family: var(--heading-font);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 6px;
+}
+
+.project-details .highlight-label {
+  display: block;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.project-details .contribution-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-details .contribution-list li {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  font-size: 16px;
+  line-height: 1.65;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.project-details .contribution-list li:last-child {
+  border-bottom: 0;
+}
+
+.project-details .contribution-list i {
+  flex-shrink: 0;
+  font-size: 20px;
+  line-height: 1.3;
+  color: color-mix(in srgb, var(--accent-color), #000 15%);
+}
+
+.project-details .project-info {
+  position: sticky;
+  top: 100px;
+  padding: 30px;
+  border-radius: 14px;
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 3px solid var(--accent-color);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.project-details .project-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.project-details .project-info h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 22px 0 12px 0;
+}
+
+.project-details .project-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-details .project-facts li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.project-details .project-facts strong {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+}
+
+.project-details .project-facts span {
+  color: var(--heading-color);
+  font-weight: 500;
+}
+
+.project-details .project-external {
+  width: 100%;
+  margin-top: 26px;
+}
+
+.project-details .project-pager {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: 70px;
+  padding-top: 30px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.project-details .pager-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  color: var(--heading-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.project-details .pager-link:hover {
+  color: var(--heading-color);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.project-details .pager-next {
+  text-align: right;
+}
+
+.project-details .pager-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: color-mix(in srgb, var(--accent-color), #000 25%);
+}
+
+.project-details .pager-title {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.project-details .pager-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.project-details .pager-all i {
+  font-size: 22px;
+  color: color-mix(in srgb, var(--accent-color), #000 15%);
+}
+
+.project-details .pager-all:hover {
+  color: color-mix(in srgb, var(--accent-color), #000 25%);
+}
+
+@media (max-width: 991px) {
+  .project-details .project-info {
+    position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-details .project-pager {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-details .pager-all {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .project-details .pager-all i {
+    font-size: 16px;
   }
 }
 
