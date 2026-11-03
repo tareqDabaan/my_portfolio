@@ -209,14 +209,6 @@ h6 {
   }
 }
 
-/* Home page: the hero is light, so the header uses dark text until the page is scrolled */
-.index-page:not(.scrolled) .header {
-  --default-color: #3b434a;
-  --heading-color: #3b434a;
-  --nav-color: #3b434a;
-  --nav-hover-color: color-mix(in srgb, var(--accent-color), #000 28%);
-}
-
 .scrolled .header {
   box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
   padding: 12px 0;
@@ -739,10 +731,7 @@ section,
   align-items: center;
   padding: 130px 0 70px 0;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--accent-color), transparent 78%), transparent 42%),
-    radial-gradient(circle at 92% 88%, rgba(80, 120, 255, 0.10), transparent 45%),
-    #fffdf8;
+  background: #0a0e15;
 }
 
 /* subtle dot pattern that fades out towards the bottom */
@@ -750,7 +739,7 @@ section,
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(15, 23, 42, 0.09) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 26px 26px;
   -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
   mask-image: linear-gradient(to bottom, #000 55%, transparent);
@@ -768,7 +757,7 @@ section,
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--accent-color), #000 28%);
+  color: var(--accent-color);
   margin-bottom: 10px;
 }
 
@@ -831,9 +820,9 @@ section,
   align-items: center;
   justify-content: center;
   font-size: 17px;
-  color: var(--heading-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 78%);
-  background: var(--surface-color);
+  color: var(--default-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
   transition: 0.3s;
 }
 
@@ -849,9 +838,9 @@ section,
   margin: 0 0 0 auto;
   border-radius: 16px;
   overflow: hidden;
-  background: #ffffff;
-  border: 1px solid #e3e6ea;
-  box-shadow: 0 30px 60px -28px rgba(15, 23, 42, 0.28);
+  background: #0f141d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.85);
 }
 
 .hero .hero-code-bar {
@@ -859,8 +848,8 @@ section,
   align-items: center;
   gap: 7px;
   padding: 12px 16px;
-  background: #f6f8fa;
-  border-bottom: 1px solid #e3e6ea;
+  background: #161c27;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .hero .hero-code-bar span {
@@ -882,7 +871,7 @@ section,
   margin-left: 12px;
   font-style: normal;
   font-size: 13px;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.55);
   font-family: ui-monospace, "Cascadia Code", Consolas, "DejaVu Sans Mono", monospace;
 }
 
@@ -892,18 +881,18 @@ section,
   font-family: ui-monospace, "Cascadia Code", Consolas, "DejaVu Sans Mono", monospace;
   font-size: 15px;
   line-height: 1.75;
-  color: #24292f;
+  color: #d4d4d4;
   white-space: pre;
   overflow-x: auto;
 }
 
-/* syntax colours (light editor theme) */
-.hero-code .k { color: #0033b3; }
-.hero-code .t { color: #267f99; }
-.hero-code .s { color: #a31515; }
-.hero-code .n { color: #098658; }
-.hero-code .c { color: #6a8a5a; font-style: italic; }
-.hero-code .p { color: #7a3e9d; }
+/* syntax colours */
+.hero-code .k { color: #569cd6; }
+.hero-code .t { color: #4ec9b0; }
+.hero-code .s { color: #ce9178; }
+.hero-code .n { color: #b5cea8; }
+.hero-code .c { color: #6a9955; }
+.hero-code .p { color: #9cdcfe; }
 
 @media (max-width: 991px) {
   .hero .hero-text {
