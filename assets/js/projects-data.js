@@ -26,6 +26,8 @@
  *                   width/height: the video's pixel size, so the frame keeps the right shape
  *                   sound:  true if the video has audio worth hearing (otherwise it plays muted)
  *                   duration: length shown on the home page thumbnail, e.g. "1:41"
+ *                   screens: app screenshots shown as small thumbnails under this video's description
+ *                            (optional): [{ title, src, thumb, alt, description }]; click opens full size
  *                 Every video also appears in the "Watch the demos" strip on the home page.
  *                 src/poster are paths inside this repo, e.g. "assets/video/name.mp4"
  *   video         A single demo video (older format, same fields as one item of "videos")
@@ -70,7 +72,44 @@ window.PROJECTS = [
         width: 540,
         height: 1158,
         sound: true,
-        caption: "A real-time, speech-to-speech conversation in Arabic. The assistant checks the employee's leave balance, asks for the reason behind a sick-leave request and submits it, then summarizes last week's attendance aloud while showing the report on screen. Turn your sound on to hear it."
+        caption: "A real-time, speech-to-speech conversation in Arabic. The assistant checks the employee's leave balance, asks for the reason behind a sick-leave request and submits it, then summarizes last week's attendance aloud while showing the report on screen. Turn your sound on to hear it.",
+        screens: [
+          {
+            title: "Sign in",
+            src: "assets/img/hr-app/1-sign-in.jpg",
+            thumb: "assets/img/hr-app/1-sign-in-thumb.jpg",
+            alt: "HR assistant app sign-in screen with a Sign in with Microsoft button",
+            description: "Employees sign in with their Microsoft work account (Microsoft Entra ID). The backend identifies them from that token on every request."
+          },
+          {
+            title: "Sick leave",
+            src: "assets/img/hr-app/2-sick-leave.jpg",
+            thumb: "assets/img/hr-app/2-sick-leave-thumb.jpg",
+            alt: "Sick-leave screen showing the leave balance, days pending review and the list of requests",
+            description: "The leave balance, days reserved by pending requests, and the request history with approved, pending and rejected requests."
+          },
+          {
+            title: "My attendance",
+            src: "assets/img/hr-app/3-my-attendance.jpg",
+            thumb: "assets/img/hr-app/3-my-attendance-thumb.jpg",
+            alt: "Chat answer showing the employee's attendance record for the last few days",
+            description: "Asked in chat for the last few days of attendance, the AI agent calls the attendance API and shows each day's check-in and check-out."
+          },
+          {
+            title: "Weekly summary",
+            src: "assets/img/hr-app/4-weekly-summary.jpg",
+            thumb: "assets/img/hr-app/4-weekly-summary-thumb.jpg",
+            alt: "Chat answer showing last week's attendance summary with the attendance rate and average times",
+            description: "Last week's attendance summary: attendance rate, days present, on leave, late and absent, and average check-in, check-out and working hours."
+          },
+          {
+            title: "Team attendance",
+            src: "assets/img/hr-app/5-team-attendance.jpg",
+            thumb: "assets/img/hr-app/5-team-attendance-thumb.jpg",
+            alt: "Chat answer showing a team member's attendance record, with the employee's name blurred",
+            description: "A manager asks about a team member by name. The backend finds them with bilingual fuzzy name search and only returns people in the manager's own team. Name blurred for privacy."
+          }
+        ]
       },
       {
         title: "Admin portal: leave approvals",

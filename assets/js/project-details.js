@@ -102,6 +102,31 @@
     if (videos.length === 1) text.append(el('h2', null, 'See it in action'));
     if (v.caption) text.append(el('p', null, v.caption));
 
+    // App screenshots: small thumbnails that open full size in the lightbox (GLightbox, set up in main.js)
+    if (v.screens && v.screens.length) {
+      text.append(el('span', 'app-screens-label', 'App screens'));
+      const grid = el('div', 'app-screens');
+      v.screens.forEach(s => {
+        const a = el('a', 'glightbox app-screen');
+        a.href = s.src;
+        a.dataset.gallery = 'screens-' + project.id;
+        a.dataset.title = s.title;
+        if (s.description) a.dataset.description = s.description;
+        a.dataset.descPosition = 'right';   // tall phone screenshots: put the text beside the image (phones show it below)
+        a.dataset.alt = s.alt || s.title;
+        a.setAttribute('aria-label', 'View full size: ' + s.title);
+        const frame = el('span', 'app-screen-frame');
+        const img = el('img');
+        img.src = s.thumb || s.src;
+        img.alt = s.alt || s.title;
+        img.loading = 'lazy';
+        frame.append(img);
+        a.append(frame, el('span', 'app-screen-title', s.title));
+        grid.append(a);
+      });
+      text.append(grid);
+    }
+
     // Wide desktop recordings sit under their description; phone recordings sit beside it
     if (isBrowser) block.append(text, frame); else block.append(frame, text);
     main.push(block);
