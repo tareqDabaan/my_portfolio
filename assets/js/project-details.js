@@ -10,6 +10,139 @@
   const index = projects.findIndex(p => p.id === id);
   const project = projects[index];
 
+  // ---------- Screen viewer: full-size app screenshots shown inside a phone ----------
+  let viewer = null;
+  function openScreens(screens, index, opener) {
+    if (!viewer) viewer = buildViewer();
+    viewer.open(screens, index, opener);
+  }
+
+  function buildViewer() {
+    const root = el('div', 'screen-viewer');
+    root.hidden = true;
+    root.setAttribute('role', 'dialog');
+    root.setAttribute('aria-modal', 'true');
+    root.setAttribute('aria-labelledby', 'sv-title');
+
+    const backdrop = el('div', 'sv-backdrop');
+    const button = (cls, label, iconName) => {
+      const b = el('button', cls);
+      b.type = 'button';
+      b.setAttribute('aria-label', label);
+      b.append(icon(iconName));
+      return b;
+    };
+    const close = button('sv-close', 'Close', 'x-lg');
+    const prev = button('sv-nav sv-prev', 'Previous screenshot', 'chevron-left');
+    const next = button('sv-nav sv-next', 'Next screenshot', 'chevron-right');
+
+    // phone: body with side buttons, screen with the screenshot, and a camera hole
+    const phone = el('div', 'sv-phone');
+    const sideButtons = el('span', 'sv-side-buttons');
+    sideButtons.setAttribute('aria-hidden', 'true');
+    const screen = el('div', 'sv-screen');
+    const img = el('img');
+    screen.append(img);
+    const camera = el('span', 'sv-camera');
+    camera.setAttribute('aria-hidden', 'true');
+    phone.append(sideButtons, screen, camera);
+
+    const info = el('div', 'sv-info');
+    const count = el('span', 'sv-count');
+    const title = el('h3');
+    title.id = 'sv-title';
+    const desc = el('p');
+    const dots = el('div', 'sv-dots');
+    info.append(count, title, desc, dots);
+
+    const stage = el('div', 'sv-stage');
+    stage.append(phone, info);
+    root.append(backdrop, stage, prev, next, close);
+    document.body.append(root);
+
+    let list = [];
+    let current = 0;
+    let opener = null;
+
+    function restart(node, cls) {
+      node.classList.remove('sv-anim-next', 'sv-anim-prev', 'sv-anim-fade');
+      void node.offsetWidth;   // restart the CSS animation
+      node.classList.add(cls);
+    }
+
+    function show(n, dir) {
+      current = (n + list.length) % list.length;
+      const s = list[current];
+      img.src = s.src;
+      img.alt = s.alt || s.title;
+      count.textContent = (current + 1) + ' / ' + list.length;
+      title.textContent = s.title;
+      desc.textContent = s.description || '';
+      [...dots.children].forEach((d, k) => d.setAttribute('aria-current', String(k === current)));
+      if (dir) { restart(img, dir > 0 ? 'sv-anim-next' : 'sv-anim-prev'); restart(info, 'sv-anim-fade'); }
+      // load the neighbours now so switching is instant
+      [1, -1].forEach(d => { const p = new Image(); p.src = list[(current + d + list.length) % list.length].src; });
+    }
+
+    function shut() {
+      if (root.hidden) return;
+      root.hidden = true;
+      document.body.classList.remove('sv-open');
+      if (opener) opener.focus();
+    }
+
+    prev.addEventListener('click', () => show(current - 1, -1));
+    next.addEventListener('click', () => show(current + 1, 1));
+    close.addEventListener('click', shut);
+    root.addEventListener('click', e => {
+      if (e.target === root || e.target === backdrop || e.target === stage) shut();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (root.hidden) return;
+      if (e.key === 'Escape') shut();
+      else if (e.key === 'ArrowRight' && list.length > 1) show(current + 1, 1);
+      else if (e.key === 'ArrowLeft' && list.length > 1) show(current - 1, -1);
+      else if (e.key === 'Tab') {
+        // keep keyboard focus inside the viewer
+        const focusables = [close, ...(list.length > 1 ? [prev, next, ...dots.children] : [])];
+        const i = focusables.indexOf(document.activeElement);
+        if (e.shiftKey && i <= 0) { e.preventDefault(); focusables[focusables.length - 1].focus(); }
+        else if (!e.shiftKey && i === focusables.length - 1) { e.preventDefault(); focusables[0].focus(); }
+      }
+    });
+
+    // swipe left/right on touch screens
+    let touchX = null;
+    stage.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener('touchend', e => {
+      if (touchX === null || list.length < 2) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      touchX = null;
+      if (Math.abs(dx) > 45) show(current + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+    });
+
+    return {
+      open(screens, index, from) {
+        list = screens;
+        opener = from;
+        dots.replaceChildren(...list.map((s, k) => {
+          const d = el('button');
+          d.type = 'button';
+          d.setAttribute('aria-label', 'Show ' + s.title);
+          d.addEventListener('click', () => { if (k !== current) show(k, k > current ? 1 : -1); });
+          return d;
+        }));
+        prev.hidden = next.hidden = dots.hidden = list.length < 2;
+        root.hidden = false;
+        document.body.classList.add('sv-open');
+        restart(stage, 'sv-anim-fade');
+        show(index, 0);
+        close.focus();
+      }
+    };
+  }
+
   // Small helper: create an element with a class and optional text (text is never parsed as HTML)
   function el(tag, className, text) {
     const node = document.createElement(tag);
@@ -102,19 +235,15 @@
     if (videos.length === 1) text.append(el('h2', null, 'See it in action'));
     if (v.caption) text.append(el('p', null, v.caption));
 
-    // App screenshots: small thumbnails that open full size in the lightbox (GLightbox, set up in main.js)
+    // App screenshots: small thumbnails; clicking one opens them full size inside a phone (screen viewer below)
     if (v.screens && v.screens.length) {
       text.append(el('span', 'app-screens-label', 'App screens'));
       const grid = el('div', 'app-screens');
-      v.screens.forEach(s => {
-        const a = el('a', 'glightbox app-screen');
-        a.href = s.src;
-        a.dataset.gallery = 'screens-' + project.id;
-        a.dataset.title = s.title;
-        if (s.description) a.dataset.description = s.description;
-        a.dataset.descPosition = 'right';   // tall phone screenshots: put the text beside the image (phones show it below)
-        a.dataset.alt = s.alt || s.title;
+      v.screens.forEach((s, i) => {
+        const a = el('a', 'app-screen');
+        a.href = s.src;   // without JavaScript the link simply opens the image
         a.setAttribute('aria-label', 'View full size: ' + s.title);
+        a.addEventListener('click', e => { e.preventDefault(); openScreens(v.screens, i, a); });
         const frame = el('span', 'app-screen-frame');
         const img = el('img');
         img.src = s.thumb || s.src;

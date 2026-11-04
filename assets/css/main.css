@@ -2115,27 +2115,329 @@ body.video-modal-open {
   }
 }
 
-/* Full-size screenshot viewer (GLightbox): darker backdrop, and on phones a solid caption panel
-   so the text doesn't sit on top of the screenshot's own content */
-.glightbox-container .goverlay {
-  background: rgba(6, 9, 15, 0.95);
+/* Full-size screenshot viewer: the screenshot shown inside a phone */
+.screen-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.glightbox-mobile .glightbox-container .gslide-description {
-  background: rgba(10, 14, 21, 0.94);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 14px 16px 22px 16px;
+.screen-viewer[hidden] {
+  display: none;
 }
 
-.glightbox-mobile .glightbox-container .gslide-title {
+body.sv-open {
+  overflow: hidden;
+}
+
+.screen-viewer .sv-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 9, 15, 0.94);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.screen-viewer .sv-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  padding: 24px;
+  max-width: 100%;
+}
+
+/* phone body */
+.screen-viewer .sv-phone {
+  position: relative;
+  flex-shrink: 0;
+  padding: 10px;
+  border-radius: 46px;
+  background: linear-gradient(145deg, #2b2e34 0%, #0c0d10 38%, #0c0d10 70%, #23252b 100%);
+  box-shadow:
+    inset 0 0 0 1.5px #3b3e46,
+    0 0 0 1px #000,
+    0 40px 90px -25px rgba(0, 0, 0, 0.9);
+}
+
+.screen-viewer .sv-screen {
+  border-radius: 37px;
+  overflow: hidden;
+  background: #000;
+}
+
+.screen-viewer .sv-screen img {
+  display: block;
+  height: min(84vh, 820px);
+  width: auto;
+  aspect-ratio: 1080 / 2316;
+}
+
+/* camera hole over the status bar */
+.screen-viewer .sv-camera {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  margin-left: -5.5px;
+  border-radius: 50%;
+  background: #050506;
+  box-shadow: inset 0 0 0 2px #191a1e, 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* power button (right) and volume button (left) */
+.screen-viewer .sv-side-buttons::before,
+.screen-viewer .sv-side-buttons::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  background: #2b2e34;
+}
+
+.screen-viewer .sv-side-buttons::before {
+  right: -3px;
+  top: 22%;
+  height: 64px;
+  border-radius: 0 3px 3px 0;
+}
+
+.screen-viewer .sv-side-buttons::after {
+  left: -3px;
+  top: 17%;
+  height: 104px;
+  border-radius: 3px 0 0 3px;
+}
+
+/* title and description */
+.screen-viewer .sv-info {
+  width: 300px;
+  color: #ffffff;
+}
+
+.screen-viewer .sv-count {
+  display: inline-block;
+  font-family: var(--nav-font);
+  font-size: 13px;
   font-weight: 700;
-  margin-bottom: 6px;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  margin-bottom: 10px;
 }
 
-.glightbox-mobile .glightbox-container .gslide-desc {
-  color: #c4c8cf;
-  font-size: 14px;
-  line-height: 1.5;
+.screen-viewer .sv-info h3 {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.screen-viewer .sv-info p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.screen-viewer .sv-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.screen-viewer .sv-dots[hidden] {
+  display: none;
+}
+
+.screen-viewer .sv-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  transition: width 0.3s, background-color 0.3s;
+}
+
+.screen-viewer .sv-dots button[aria-current="true"] {
+  width: 26px;
+  background: var(--accent-color);
+}
+
+/* previous / next / close buttons */
+.screen-viewer .sv-nav,
+.screen-viewer .sv-close {
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.screen-viewer .sv-nav {
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  font-size: 20px;
+}
+
+.screen-viewer .sv-nav[hidden] {
+  display: none;
+}
+
+.screen-viewer .sv-prev {
+  left: 24px;
+}
+
+.screen-viewer .sv-next {
+  right: 24px;
+}
+
+.screen-viewer .sv-close {
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  font-size: 16px;
+}
+
+.screen-viewer .sv-nav:hover,
+.screen-viewer .sv-close:hover {
+  color: #1d1d1d;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.screen-viewer button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent-color), transparent 30%);
+  outline-offset: 3px;
+}
+
+.screen-viewer i {
+  line-height: 0;
+}
+
+/* animations: the screenshot slides in like a swipe on the phone */
+@keyframes sv-fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes sv-next {
+  from { opacity: 0.2; transform: translateX(40px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes sv-prev {
+  from { opacity: 0.2; transform: translateX(-40px); }
+  to { opacity: 1; transform: none; }
+}
+
+.screen-viewer .sv-anim-fade {
+  animation: sv-fade 0.3s ease;
+}
+
+.screen-viewer .sv-anim-next {
+  animation: sv-next 0.3s ease;
+}
+
+.screen-viewer .sv-anim-prev {
+  animation: sv-prev 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen-viewer .sv-anim-fade,
+  .screen-viewer .sv-anim-next,
+  .screen-viewer .sv-anim-prev {
+    animation: none;
+  }
+}
+
+/* tablets and phones: text under the phone */
+@media (max-width: 991px) {
+  .screen-viewer .sv-stage {
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px;
+  }
+
+  .screen-viewer .sv-screen img {
+    height: min(66vh, 720px);
+  }
+
+  .screen-viewer .sv-info {
+    width: min(420px, 100%);
+    text-align: center;
+  }
+
+  .screen-viewer .sv-info h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .screen-viewer .sv-info p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+
+  .screen-viewer .sv-count {
+    margin-bottom: 4px;
+  }
+
+  .screen-viewer .sv-dots {
+    justify-content: center;
+  }
+
+  .screen-viewer .sv-nav {
+    top: 38%;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .screen-viewer .sv-prev {
+    left: 10px;
+  }
+
+  .screen-viewer .sv-next {
+    right: 10px;
+  }
+
+  .screen-viewer .sv-close {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+  .screen-viewer .sv-phone {
+    padding: 7px;
+    border-radius: 36px;
+  }
+
+  .screen-viewer .sv-screen {
+    border-radius: 30px;
+  }
+
+  .screen-viewer .sv-camera {
+    top: 12px;
+    width: 9px;
+    height: 9px;
+    margin-left: -4.5px;
+  }
 }
 
 .project-details .contribution-list {
