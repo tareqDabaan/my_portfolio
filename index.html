@@ -21,6 +21,8 @@
       content="Software Engineer specializing in ASP.NET Core, scalable systems, APIs and integrations."
     />
 
+    <link rel="preload" as="image" href="assets/img/tareq-dabaan-cutout.webp" fetchpriority="high" />
+
     <!-- Favicons -->
     <link href="assets/img/Software Dose orange (1).png" rel="icon" />
 
@@ -87,58 +89,46 @@
     <main class="main">
       <!-- Hero Section -->
       <section id="hero" class="hero section dark-background">
-        <div class="container">
-          <div class="row align-items-center gy-5">
-            <div class="col-lg-6 hero-text" data-aos="fade-up" data-aos-delay="100">
-              <span class="hero-greeting">Hi, I'm</span>
-              <h1>Tareq Dabaan</h1>
-              <p class="hero-role">
-                Software Engineer <span class="sep">&middot;</span> ASP.NET Core
-                <span class="sep">&middot;</span> Backend &amp; Integrations
-              </p>
-              <p class="hero-tagline">
-                I design and build scalable systems, clean APIs and reliable
-                integrations for government and enterprise platforms in Kuwait.
-              </p>
+        <!-- Giant name scrolling right to left behind the photo (decorative; the name is in the h1 for screen readers) -->
+        <div class="hero-marquee" aria-hidden="true">
+          <div class="hero-marquee-track"><span>Tareq Dabaan</span><i>&#10022;</i><span class="outline">Tareq Dabaan</span><i>&#10022;</i><span>Tareq Dabaan</span><i>&#10022;</i><span class="outline">Tareq Dabaan</span><i>&#10022;</i><span>Tareq Dabaan</span><i>&#10022;</i><span class="outline">Tareq Dabaan</span><i>&#10022;</i><span>Tareq Dabaan</span><i>&#10022;</i><span class="outline">Tareq Dabaan</span><i>&#10022;</i></div>
+        </div>
 
-              <div class="hero-actions">
-                <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="btn-download-cv"><i class="bi bi-download"></i> Download CV</a>
-                <a href="assets/Tareq-Dabaan-CV.pdf" target="_blank" rel="noopener" class="btn-view-cv"><i class="bi bi-eye"></i> View CV</a>
-              </div>
+        <!-- Photo standing in a tall accent arch -->
+        <div class="hero-arch" aria-hidden="true"></div>
+        <img
+          class="hero-photo"
+          src="assets/img/tareq-dabaan-cutout.webp"
+          alt="Tareq Dabaan"
+          width="529"
+          height="1086"
+          fetchpriority="high"
+        />
 
-              <div class="hero-social">
-                <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                <a href="https://github.com/tareqDabaan" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                <a href="https://wa.me/96590956148" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-              </div>
-            </div>
+        <div class="hero-content" data-aos="fade-up" data-aos-delay="100">
+          <span class="hero-greeting">Hi, I'm Tareq</span>
+          <h1>
+            <span class="visually-hidden">Tareq Dabaan, Software Engineer. </span>
+            Building <em>systems</em><br />that just work.
+          </h1>
+          <p class="hero-role">
+            Software Engineer <span class="sep">&middot;</span> ASP.NET Core
+            <span class="sep">&middot;</span> Backend &amp; Integrations
+          </p>
+          <p class="hero-tagline">
+            I design and build scalable systems, clean APIs and reliable
+            integrations for government and enterprise platforms in Kuwait.
+          </p>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-              <figure
-                class="hero-code"
-                role="img"
-                aria-label="Code-style summary: Tareq Dabaan, Software Engineer based in Kuwait City with 3+ years of experience, working with .NET 9, ASP.NET Core, SQL and Azure, certified as AWS Developer, Azure Database Administrator and Azure AI Engineer."
-              >
-                <div class="hero-code-bar" aria-hidden="true"><span></span><span></span><span></span><em>TareqDabaan.cs</em></div>
-<pre aria-hidden="true"><span class="k">public class</span> <span class="t">SoftwareEngineer</span>
-{
-    <span class="k">public string</span> <span class="p">Name</span>  =&gt; <span class="s">"Tareq Dabaan"</span>;
-    <span class="k">public string</span> <span class="p">Based</span> =&gt; <span class="s">"Kuwait City"</span>;
-    <span class="k">public int</span>    <span class="p">Years</span> =&gt; <span class="n">3</span>; <span class="c">// and counting</span>
+          <div class="hero-actions">
+            <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="btn-download-cv"><i class="bi bi-download"></i> Download CV</a>
+            <a href="assets/Tareq-Dabaan-CV.pdf" target="_blank" rel="noopener" class="btn-view-cv"><i class="bi bi-eye"></i> View CV</a>
+          </div>
 
-    <span class="k">public string</span>[] <span class="p">Stack</span> =&gt;
-        [<span class="s">".NET 9"</span>, <span class="s">"ASP.NET Core"</span>,
-         <span class="s">"SQL"</span>, <span class="s">"Azure"</span>];
-
-    <span class="k">public string</span>[] <span class="p">Certified</span> =&gt;
-        [<span class="s">"AWS Developer"</span>, <span class="s">"Azure DBA"</span>,
-         <span class="s">"Azure AI Engineer"</span>];
-
-    <span class="k">public string</span> <span class="p">Focus</span> =&gt;
-        <span class="s">"Systems, APIs &amp; integrations"</span>;
-}</pre>
-              </figure>
-            </div>
+          <div class="hero-social">
+            <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/tareqDabaan" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://wa.me/96590956148" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
       </section>
