@@ -9,57 +9,80 @@
       content="Project details from the portfolio of Tareq Dabaan, Software Engineer specializing in ASP.NET Core, APIs and system integrations."
     />
     <meta name="author" content="Tareq Dabaan" />
-    <meta name="theme-color" content="#060606" />
+    <meta name="theme-color" content="#0a0e15" />
 
-    <!-- Favicons -->
-    <link href="assets/img/Software Dose orange (1).png" rel="icon" />
+    <!-- Link previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tareq Dabaan" />
+    <meta property="og:title" content="Projects | Tareq Dabaan, Software Engineer" />
+    <meta property="og:description" content="Platforms Tareq Dabaan built and contributed to: ASP.NET Core backends, APIs and system integrations." />
+    <meta property="og:image" content="https://tareqdabaan.github.io/my_portfolio/assets/img/brand/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://tareqdabaan.github.io/my_portfolio/assets/img/brand/og-image.jpg" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/brand/icon-512.png" />
+    <link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Quicksand:wght@300;400;500;600;700&family=Domine:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Vendor CSS Files -->
+    <!-- Vendor CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <!-- Main CSS File -->
-    <link href="assets/css/main.css?v=20261105" rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css?v=20261106" rel="stylesheet" />
   </head>
 
   <body class="project-page">
-    <header id="header" class="header d-flex align-items-center fixed-top">
-      <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-          <span class="sitename">Tareq Dabaan</span>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ======================= Header ======================= -->
+    <header id="header" class="header">
+      <div class="header-inner">
+        <a href="index.html" class="logo" aria-label="Tareq Dabaan, home">
+          <span class="logo-mark" aria-hidden="true">TD</span>
+          <span class="logo-name">Tareq Dabaan</span>
         </a>
 
         <nav id="navmenu" class="navmenu" aria-label="Main navigation">
           <ul>
-            <li><a href="index.html#hero">Home</a></li>
             <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#resume">Resume</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
             <li><a href="index.html#projects" class="active">Projects</a></li>
             <li><a href="index.html#certificates">Certificates</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
             <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
           </ul>
-          <button type="button" class="mobile-nav-toggle d-xl-none bi bi-list" aria-label="Toggle navigation menu"></button>
+          <div class="navmenu-footer">
+            <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="btn-download-cv"><i class="bi bi-download"></i> Download CV</a>
+            <div class="navmenu-social">
+              <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://github.com/tareqDabaan" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a href="https://wa.me/96590956148" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
         </nav>
 
-        <div class="header-social-links">
-          <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" class="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/tareqDabaan" class="github" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        </div>
+        <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="header-cta"><i class="bi bi-download"></i> CV</a>
+        <button type="button" class="mobile-nav-toggle" aria-label="Open menu" aria-controls="navmenu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
       </div>
     </header>
 
-    <main class="main">
-      <!-- Page Title -->
+    <main id="main" class="main">
+      <!-- Page title -->
       <div class="page-title project-title dark-background">
         <div class="container">
           <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -74,9 +97,8 @@
           <h1 id="project-title">Project</h1>
         </div>
       </div>
-      <!-- End Page Title -->
 
-      <!-- Project Details Section -->
+      <!-- Project details -->
       <section id="project-details" class="project-details section">
         <div class="container">
           <div class="row gy-5">
@@ -89,45 +111,30 @@
           <nav class="project-pager" id="project-pager" aria-label="More projects"></nav>
         </div>
       </section>
-      <!-- /Project Details Section -->
     </main>
 
-    <footer id="footer" class="footer position-relative dark-background">
-      <div class="container">
-        <h3 class="sitename">Tareq Dabaan</h3>
-        <p>Feel free to connect with me on my social media accounts.</p>
-        <div class="social-links d-flex justify-content-center">
-          <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" class="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/tareqDabaan" class="github" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://wa.me/96590956148" class="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-        </div>
-        <div class="copyright">
-          <span>&copy; <span id="copyright-year">2026</span></span>
-          <strong class="px-1 sitename">Tareq Dabaan</strong>
-          <span>All Rights Reserved</span>
+    <!-- ======================= Footer ======================= -->
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-inner">
+        <a href="index.html" class="logo" aria-label="Tareq Dabaan, home">
+          <span class="logo-mark" aria-hidden="true">TD</span>
+          <span class="logo-name">Tareq Dabaan</span>
+        </a>
+        <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Tareq Dabaan &middot; Kuwait City</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/tareqDabaan" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://wa.me/96590956148" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>
     </footer>
 
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#main" id="scroll-top" class="scroll-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
     <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-    <!-- Project data and page rendering -->
-    <script src="assets/js/projects-data.js?v=20261105"></script>
-    <script src="assets/js/project-details.js?v=20261105"></script>
-
-    <!-- Main JS File -->
-    <script src="assets/js/main.js?v=20261105"></script>
+    <script src="assets/js/projects-data.js?v=20261106"></script>
+    <script src="assets/js/project-details.js?v=20261106"></script>
+    <script src="assets/js/main.js?v=20261106"></script>
   </body>
 </html>

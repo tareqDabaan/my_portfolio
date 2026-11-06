@@ -8,86 +8,106 @@
       name="description"
       content="Tareq Dabaan, Software Engineer in Kuwait specializing in ASP.NET Core, RESTful APIs, microservices, database architecture and system integrations. AWS and Microsoft Azure certified."
     />
-    <meta
-      name="keywords"
-      content="Tareq Dabaan, Software Engineer, ASP.NET Core, Backend Developer, Kuwait, REST APIs, Microservices, Azure, AWS"
-    />
     <meta name="author" content="Tareq Dabaan" />
-    <meta name="theme-color" content="#060606" />
+    <meta name="theme-color" content="#0a0e15" />
+    <link rel="canonical" href="https://tareqdabaan.github.io/my_portfolio/" />
+
+    <!-- Link previews (LinkedIn, WhatsApp, X, Slack...) -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tareq Dabaan" />
+    <meta property="og:url" content="https://tareqdabaan.github.io/my_portfolio/" />
     <meta property="og:title" content="Tareq Dabaan | Software Engineer" />
-    <meta
-      property="og:description"
-      content="Software Engineer specializing in ASP.NET Core, scalable systems, APIs and integrations."
-    />
+    <meta property="og:description" content="Software Engineer in Kuwait building scalable systems, clean APIs and reliable integrations with ASP.NET Core." />
+    <meta property="og:image" content="https://tareqdabaan.github.io/my_portfolio/assets/img/brand/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tareq Dabaan, Software Engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tareq Dabaan | Software Engineer" />
+    <meta name="twitter:description" content="Software Engineer in Kuwait building scalable systems, clean APIs and reliable integrations with ASP.NET Core." />
+    <meta name="twitter:image" content="https://tareqdabaan.github.io/my_portfolio/assets/img/brand/og-image.jpg" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/brand/icon-512.png" />
+    <link rel="apple-touch-icon" href="assets/img/brand/apple-touch-icon.png" />
 
     <link rel="preload" as="image" href="assets/img/tareq-dabaan-cutout.webp" fetchpriority="high" />
-
-    <!-- Favicons -->
-    <link href="assets/img/Software Dose orange (1).png" rel="icon" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Quicksand:wght@300;400;500;600;700&family=Domine:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Vendor CSS Files -->
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    <!-- Vendor CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-    <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
-    <!-- Main CSS File -->
-    <link href="assets/css/main.css?v=20261105" rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css?v=20261106" rel="stylesheet" />
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tareq Dabaan",
+        "jobTitle": "Software Engineer",
+        "url": "https://tareqdabaan.github.io/my_portfolio/",
+        "image": "https://tareqdabaan.github.io/my_portfolio/assets/img/brand/og-image.jpg",
+        "email": "mailto:tareqdab2000@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Kuwait City", "addressCountry": "KW" },
+        "worksFor": { "@type": "Organization", "name": "SUHOB Integrated Computer Solutions" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Homs University" },
+        "knowsAbout": ["ASP.NET Core", ".NET", "RESTful APIs", "Microservices", "SQL Server", "PostgreSQL", "Microsoft Azure", "System integration"],
+        "sameAs": ["https://www.linkedin.com/in/tareq-dabaan-647513225/", "https://github.com/tareqDabaan"]
+      }
+    </script>
   </head>
 
   <body class="index-page">
-    <header id="header" class="header d-flex align-items-center fixed-top">
-      <div
-        class="container-fluid position-relative d-flex align-items-center justify-content-between"
-      >
-        <a href="#hero" class="logo d-flex align-items-center me-auto me-xl-0">
-          <span class="sitename">Tareq Dabaan</span>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ======================= Header ======================= -->
+    <header id="header" class="header">
+      <div class="header-inner">
+        <a href="#hero" class="logo" aria-label="Tareq Dabaan, back to top">
+          <span class="logo-mark" aria-hidden="true">TD</span>
+          <span class="logo-name">Tareq Dabaan</span>
         </a>
 
         <nav id="navmenu" class="navmenu" aria-label="Main navigation">
           <ul>
-            <li><a href="#hero" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#resume">Resume</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#contact">Contact</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
-          <button
-            type="button"
-            class="mobile-nav-toggle d-xl-none bi bi-list"
-            aria-label="Toggle navigation menu"
-          ></button>
+          <div class="navmenu-footer">
+            <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="btn-download-cv"><i class="bi bi-download"></i> Download CV</a>
+            <div class="navmenu-social">
+              <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://github.com/tareqDabaan" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a href="https://wa.me/96590956148" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
         </nav>
 
-        <div class="header-social-links">
-          <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" class="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/tareqDabaan" class="github" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
-        </div>
+        <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="header-cta"><i class="bi bi-download"></i> CV</a>
+        <button type="button" class="mobile-nav-toggle" aria-label="Open menu" aria-controls="navmenu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
       </div>
     </header>
 
-    <main class="main">
-      <!-- Hero Section -->
+    <main id="main" class="main">
+      <!-- ======================= Hero ======================= -->
       <section id="hero" class="hero section dark-background">
         <!-- Giant name scrolling right to left behind the photo (decorative; the name is in the h1 for screen readers) -->
         <div class="hero-marquee" aria-hidden="true">
@@ -96,14 +116,7 @@
 
         <!-- Photo standing in a tall accent arch -->
         <div class="hero-arch" aria-hidden="true"></div>
-        <img
-          class="hero-photo"
-          src="assets/img/tareq-dabaan-cutout.webp"
-          alt="Tareq Dabaan"
-          width="529"
-          height="1086"
-          fetchpriority="high"
-        />
+        <img class="hero-photo" src="assets/img/tareq-dabaan-cutout.webp" alt="Tareq Dabaan" width="529" height="1086" fetchpriority="high" />
 
         <div class="hero-content" data-aos="fade-up" data-aos-delay="100">
           <span class="hero-greeting">Hi, I'm Tareq</span>
@@ -122,7 +135,7 @@
 
           <div class="hero-actions">
             <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="btn-download-cv"><i class="bi bi-download"></i> Download CV</a>
-            <a href="assets/Tareq-Dabaan-CV.pdf" target="_blank" rel="noopener" class="btn-view-cv"><i class="bi bi-eye"></i> View CV</a>
+            <a href="#projects" class="btn-view-cv"><i class="bi bi-grid-1x2"></i> See my work</a>
           </div>
 
           <div class="hero-social">
@@ -132,701 +145,405 @@
           </div>
         </div>
       </section>
-      <!-- /Hero Section -->
 
-      <!-- About Section -->
+      <!-- ======================= About ======================= -->
       <section id="about" class="about section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <span class="description-title">About</span>
-          <h2>About Me</h2>
-          <p>
-            Software Engineer based in Kuwait, building production systems,
-            APIs and integrations that government teams rely on every day.
-          </p>
+        <div class="container section-head" data-aos="fade-up">
+          <span class="section-label"><b>01</b> About</span>
+          <h2>About me</h2>
         </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4 justify-content-center align-items-center">
-            <div class="col-lg-4 text-center">
-              <img
-                src="assets/img/tareq-dabaan.jpg"
-                class="profile-img"
-                alt="Portrait of Tareq Dabaan"
-                width="704"
-                height="1183"
-              />
-            </div>
-            <div class="col-lg-8 content">
-              <h2>Software Engineer &mdash; ASP.NET Core &amp; Backend Systems</h2>
-              <p class="py-3">
-                Software Engineer with 3+ years of experience specializing in
-                ASP.NET Core. Experienced in designing scalable systems, RESTful
-                APIs, microservices, database architectures, and system
-                integrations. Strong understanding of software architecture,
-                system design, clean architecture, performance optimization, and
-                building maintainable production systems.
-              </p>
-              <p class="pb-2">
-                I'm currently a Software Engineer at
-                <strong>SUHOB Integrated Computer Solutions</strong>, delivering
-                platforms for the Ministry of Health, the Private Universities
-                Council, the National Cyber Security Center and the Ministry of
-                Education, and building the backend for a bilingual AI-powered
-                HR assistant. Certified in AWS Developer &ndash; Associate and
-                Microsoft Azure Database Administrator.
-              </p>
-              <div class="row">
-                <div class="col-md-6">
-                  <ul>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Birthday:</strong> <span>27 Jan 2001</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Phone:</strong>
-                      <a href="tel:+96590956148">+965 90956148</a>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>City:</strong> <span>Kuwait City, Kuwait</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-md-6">
-                  <ul>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Degree:</strong> <span>B.Sc. IT Engineering</span>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Email:</strong>
-                      <a href="mailto:tareqdab2000@gmail.com">tareqdab2000@gmail.com</a>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <strong>Experience:</strong> <span>3+ years</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- /About Section -->
-
-      <!-- Resume Section -->
-      <section id="resume" class="resume section light-background">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <span class="description-title">Resume</span>
-          <h2>My Resume</h2>
-          <p>Education and professional experience.</p>
-        </div>
-        <!-- End Section Title -->
 
         <div class="container">
-          <div class="row gy-4">
-            <div class="col-12" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="resume-title">Education</h3>
-              <div class="resume-item">
-                <h4>Bachelor's in Information Technology Engineering &ndash; Software Engineering</h4>
-                <h5>2019 &ndash; 2024</h5>
-                <p><em>Homs University &middot; Homs, Syria</em></p>
-              </div>
-              <!-- End Resume Item -->
+          <div class="bento">
+            <div class="tile t-intro" data-aos="fade-up">
+              <p class="t-big">
+                Software Engineer building <em>scalable systems</em>, clean APIs
+                and reliable integrations.
+              </p>
+              <p>
+                3+ years specializing in ASP.NET Core: RESTful APIs, microservices,
+                database architectures and system integrations, with a strong
+                focus on clean architecture, performance and maintainable
+                production systems.
+              </p>
             </div>
 
-          </div>
+            <div class="tile t-now tile-dark" data-aos="fade-up" data-aos-delay="100">
+              <span class="tile-label"><span class="live-dot" aria-hidden="true"></span>Currently</span>
+              <p class="t-role">Software Engineer at SUHOB Integrated Computer Solutions</p>
+              <p class="t-meta">Apr 2025 &ndash; Present &middot; Kuwait</p>
+              <i class="bi bi-building t-bg-icon" aria-hidden="true"></i>
+            </div>
 
-          <div data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title mt-5">Professional Experience</h3>
+            <div class="tile t-place" data-aos="fade-up" data-aos-delay="150">
+              <span class="tile-label">Based in</span>
+              <p class="t-city">Kuwait City</p>
+              <p class="t-time"><i class="bi bi-clock"></i> <span data-kuwait-time>Kuwait time</span></p>
+            </div>
 
-            <div class="resume-item">
-              <div class="resume-item-header">
-                <div>
-                  <h4>Software Engineer</h4>
-                  <p class="company"><em>SUHOB Integrated Computer Solutions</em></p>
-                </div>
-                <div class="resume-item-meta">
-                  <h5>Apr 2025 &ndash; Present</h5>
-                  <span class="location"><i class="bi bi-geo-alt"></i> Kuwait</span>
-                </div>
-              </div>
+            <div class="tile t-stat tile-accent" data-aos="fade-up" data-aos-delay="200">
+              <span class="tile-label">Experience</span>
+              <p class="t-num">3+</p>
+              <p class="t-num-label">years building production systems</p>
+            </div>
 
-              <ul>
-                <li>Build and maintain ASP.NET Core platforms and APIs for government clients in Kuwait across health, education, higher education and cyber security</li>
-                <li>Design databases, data pipelines and system integrations, including SQL Server, SSIS, PostgreSQL/PostGIS and HL7 messaging</li>
-                <li>Refactor existing services into clean, layered architectures while keeping production systems compatible</li>
-                <li>Integrate AI services into secure .NET backends, including an AI agent, real-time voice streaming and Azure AI Speech</li>
-                <li>Translate business requirements and eligibility rules into features, then test, validate and document them</li>
+            <div class="tile t-focus" data-aos="fade-up">
+              <span class="tile-label">What I do</span>
+              <ul class="focus-list">
+                <li><i class="bi bi-hdd-network"></i><div><strong>Backend &amp; APIs</strong><span>ASP.NET Core platforms, RESTful APIs and microservices</span></div></li>
+                <li><i class="bi bi-diagram-3"></i><div><strong>Data &amp; integrations</strong><span>SQL Server, PostGIS, SSIS pipelines and HL7 messaging</span></div></li>
+                <li><i class="bi bi-shield-check"></i><div><strong>Security &amp; cloud</strong><span>Entra ID, role-based access and Azure services</span></div></li>
               </ul>
-              <div class="role-projects">
-                <span class="role-projects-label">Key projects:</span>
-                <a href="project.html?id=hr-ai-assistant" class="role-project-chip"><i class="bi bi-robot"></i> AI-Powered HR Assistant</a>
-                <a href="project.html?id=moh" class="role-project-chip"><i class="bi bi-hospital"></i> Ministry of Health</a>
-                <a href="project.html?id=puc" class="role-project-chip"><i class="bi bi-mortarboard"></i> Private Universities Council</a>
-                <a href="project.html?id=ncsc" class="role-project-chip"><i class="bi bi-shield-lock"></i> National Cyber Security Center</a>
-                <a href="project.html?id=moe-gis" class="role-project-chip"><i class="bi bi-geo-alt"></i> Ministry of Education</a>
-              </div>
             </div>
-            <!-- End Resume Item -->
 
-            <div class="resume-item">
-              <div class="resume-item-header">
-                <div>
-                  <h4>Web Developer</h4>
-                  <p class="company"><em>WABA International Commercial Company</em></p>
-                </div>
-                <div class="resume-item-meta">
-                  <h5>Dec 2024 &ndash; Apr 2025</h5>
-                  <span class="location"><i class="bi bi-geo-alt"></i> Kuwait</span>
-                </div>
-              </div>
-              <ul>
-                <li>Developed features and provided ongoing support for the company's Shopify e-commerce store (Liquid, HTML, CSS)</li>
-                <li>Built a smart cart that shows customers product recommendations directly in the cart</li>
-                <li>Wrote Python scripts that collect data for analytics</li>
-              </ul>
-              <div class="role-projects">
-                <span class="role-projects-label">Key project:</span>
-                <a href="project.html?id=waba-shopify" class="role-project-chip"><i class="bi bi-cart-check"></i> Shopify Store &amp; Smart Cart</a>
+            <div class="tile t-gov" data-aos="fade-up" data-aos-delay="100">
+              <span class="tile-label">Trusted on</span>
+              <p class="t-gov-title">4 government platforms in Kuwait</p>
+              <div class="chips">
+                <span class="chip"><i class="bi bi-hospital"></i>Ministry of Health</span>
+                <span class="chip"><i class="bi bi-mortarboard"></i>Private Universities Council</span>
+                <span class="chip"><i class="bi bi-shield-lock"></i>National Cyber Security Center</span>
+                <span class="chip"><i class="bi bi-geo-alt"></i>Ministry of Education</span>
               </div>
             </div>
-            <!-- End Resume Item -->
 
-            <div class="resume-item">
-              <div class="resume-item-header">
-                <div>
-                  <h4>Backend Developer Intern</h4>
-                  <p class="company"><em>Remostart</em></p>
-                </div>
-                <div class="resume-item-meta">
-                  <h5>Aug 2023 &ndash; Aug 2024</h5>
-                  <span class="location"><i class="bi bi-globe2"></i> Remote</span>
-                </div>
-              </div>
-              <ul>
-                <li>Designed PostgreSQL databases and RESTful APIs with Python, Django and Django REST Framework</li>
-                <li>Optimized backend architecture and API performance</li>
-                <li>Worked in a team of four developers using Git, Docker and Postman</li>
-              </ul>
-              <div class="role-projects">
-                <span class="role-projects-label">Key project:</span>
-                <a href="project.html?id=medsal" class="role-project-chip"><i class="bi bi-heart-pulse"></i> MedSal Healthcare Platform</a>
-              </div>
+            <div class="tile t-edu" data-aos="fade-up">
+              <i class="bi bi-mortarboard-fill t-icon" aria-hidden="true"></i>
+              <p class="t-strong">B.Sc. IT Engineering</p>
+              <p class="t-sub">Homs University &middot; 2019&ndash;2024</p>
             </div>
-            <!-- End Resume Item -->
+
+            <a href="#certificates" class="tile t-cert" data-aos="fade-up" data-aos-delay="100">
+              <span class="t-icon" aria-hidden="true"><i class="bi bi-amazon"></i><i class="bi bi-microsoft"></i></span>
+              <p class="t-strong">4 certifications</p>
+              <p class="t-sub">AWS Developer &middot; Azure DBA &middot; Azure AI Engineer</p>
+            </a>
+
+            <a href="project.html?id=hr-ai-assistant" class="tile t-latest tile-dark" data-aos="fade-up" data-aos-delay="150">
+              <span class="tile-label">Latest project</span>
+              <p class="t-role">AI-Powered HR Assistant</p>
+              <p class="t-meta">The .NET 9 backend for a bilingual AI assistant with real-time chat and voice.</p>
+              <span class="t-link">View project <i class="bi bi-arrow-up-right"></i></span>
+            </a>
           </div>
         </div>
       </section>
-      <!-- /Resume Section -->
 
-      <!-- Projects Section -->
+      <!-- ======================= Experience ======================= -->
+      <section id="experience" class="experience section section-alt">
+        <div class="container section-head" data-aos="fade-up">
+          <span class="section-label"><b>02</b> Experience</span>
+          <h2>Where I've worked</h2>
+        </div>
+
+        <div class="container">
+          <ol class="timeline">
+            <li class="tl-item is-current" data-aos="fade-up">
+              <div class="tl-when">
+                <span class="tl-date">Apr 2025 &ndash; Present</span>
+                <span class="tl-place"><i class="bi bi-geo-alt"></i> Kuwait</span>
+              </div>
+              <div class="tl-card">
+                <h3>Software Engineer</h3>
+                <p class="tl-company">SUHOB Integrated Computer Solutions</p>
+                <ul class="tl-points">
+                  <li>Build and maintain ASP.NET Core platforms and APIs for government clients in Kuwait across health, education, higher education and cyber security</li>
+                  <li>Design databases, data pipelines and system integrations, including SQL Server, SSIS, PostgreSQL/PostGIS and HL7 messaging</li>
+                  <li>Refactor existing services into clean, layered architectures while keeping production systems compatible</li>
+                  <li>Integrate AI services into secure .NET backends, including an AI agent, real-time voice streaming and Azure AI Speech</li>
+                  <li>Translate business requirements and eligibility rules into features, then test, validate and document them</li>
+                </ul>
+                <div class="tl-projects">
+                  <span>Key projects</span>
+                  <a href="project.html?id=hr-ai-assistant"><i class="bi bi-robot"></i> AI-Powered HR Assistant</a>
+                  <a href="project.html?id=moh"><i class="bi bi-hospital"></i> Ministry of Health</a>
+                  <a href="project.html?id=puc"><i class="bi bi-mortarboard"></i> Private Universities Council</a>
+                  <a href="project.html?id=ncsc"><i class="bi bi-shield-lock"></i> National Cyber Security Center</a>
+                  <a href="project.html?id=moe-gis"><i class="bi bi-geo-alt"></i> Ministry of Education</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="tl-item" data-aos="fade-up">
+              <div class="tl-when">
+                <span class="tl-date">Dec 2024 &ndash; Apr 2025</span>
+                <span class="tl-place"><i class="bi bi-geo-alt"></i> Kuwait</span>
+              </div>
+              <div class="tl-card">
+                <h3>Web Developer</h3>
+                <p class="tl-company">WABA International Commercial Company</p>
+                <ul class="tl-points">
+                  <li>Developed features and provided ongoing support for the company's Shopify e-commerce store (Liquid, HTML, CSS)</li>
+                  <li>Built a smart cart that shows customers product recommendations directly in the cart</li>
+                  <li>Wrote Python scripts that collect data for analytics</li>
+                </ul>
+                <div class="tl-projects">
+                  <span>Key project</span>
+                  <a href="project.html?id=waba-shopify"><i class="bi bi-cart-check"></i> Shopify Store &amp; Smart Cart</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="tl-item" data-aos="fade-up">
+              <div class="tl-when">
+                <span class="tl-date">Aug 2023 &ndash; Aug 2024</span>
+                <span class="tl-place"><i class="bi bi-globe2"></i> Remote</span>
+              </div>
+              <div class="tl-card">
+                <h3>Backend Developer Intern</h3>
+                <p class="tl-company">Remostart</p>
+                <ul class="tl-points">
+                  <li>Designed PostgreSQL databases and RESTful APIs with Python, Django and Django REST Framework</li>
+                  <li>Optimized backend architecture and API performance</li>
+                  <li>Worked in a team of four developers using Git, Docker and Postman</li>
+                </ul>
+                <div class="tl-projects">
+                  <span>Key project</span>
+                  <a href="project.html?id=medsal"><i class="bi bi-heart-pulse"></i> MedSal Healthcare Platform</a>
+                </div>
+              </div>
+            </li>
+
+            <li class="tl-item is-education" data-aos="fade-up">
+              <div class="tl-when">
+                <span class="tl-date">2019 &ndash; 2024</span>
+                <span class="tl-place"><i class="bi bi-geo-alt"></i> Homs, Syria</span>
+              </div>
+              <div class="tl-card">
+                <h3>Bachelor's in Information Technology Engineering</h3>
+                <p class="tl-company">Homs University &middot; Software Engineering</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ======================= Projects ======================= -->
       <section id="projects" class="projects section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <span class="description-title">Projects</span>
-          <h2>Projects</h2>
+        <div class="container section-head" data-aos="fade-up">
+          <span class="section-label"><b>03</b> Projects</span>
+          <h2>Selected work</h2>
           <p>
-            A selection of platforms I've built and contributed to. Select a
-            project to see the full details, or find more of my code on my
-            <a href="https://github.com/tareqDabaan" target="_blank" rel="noopener">GitHub</a>
-            profile.
+            Platforms I've built and contributed to. Select a project for the
+            full story, or find more of my code on
+            <a href="https://github.com/tareqDabaan" target="_blank" rel="noopener">GitHub</a>.
           </p>
         </div>
-        <!-- End Section Title -->
 
         <div class="container">
           <!-- "Watch the demos" strip: built from the videos in assets/js/projects-data.js -->
           <div id="demo-strip" class="demo-strip"></div>
 
-          <h3 class="projects-group-title" data-aos="fade-up">Professional Work</h3>
-          <div class="row gy-4">
-            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-              <article class="project-card">
-                <div class="project-icon"><i class="bi bi-robot"></i></div>
-                <span class="project-badge"><i class="bi bi-play-circle-fill"></i> Video demos</span>
-                <span class="project-client">SUHOB &middot; Proof of concept</span>
-                <h4>AI-Powered HR Assistant</h4>
-                <p>
-                  The .NET 9 backend for a bilingual (English/Arabic) AI HR
-                  assistant: Microsoft Entra ID security and role-based access,
-                  real-time chat and voice streaming over WebSockets, and the HR
-                  rules and APIs that a LangChain AI agent calls.
-                </p>
-                <ul class="tag-list">
-                  <li>.NET 9</li>
-                  <li>ASP.NET Core</li>
-                  <li>Entra ID</li>
-                  <li>WebSockets</li>
-                  <li>Azure AI Speech</li>
-                  <li>SQL</li>
-                </ul>
-                <a href="project.html?id=hr-ai-assistant" class="project-link stretched-link">View details <i class="bi bi-arrow-right"></i></a>
-              </article>
-            </div>
-            <!-- End Project Item -->
-
-            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-              <article class="project-card">
-                <div class="project-icon"><i class="bi bi-hospital"></i></div>
-                <span class="project-client">Ministry of Health, Kuwait</span>
-                <h4>KPI Data Entry &amp; Data Warehouse Integration</h4>
-                <p>
-                  An ASP.NET control panel with Azure OCR for KPI data entry,
-                  feeding the Ministry's Qlik dashboards through an SSIS data
-                  warehouse refreshed every 15 minutes, plus Mirth Connect
-                  channels routing HL7 v2 messages across all Kuwait hospitals.
-                </p>
-                <ul class="tag-list">
-                  <li>ASP.NET</li>
-                  <li>Azure OCR</li>
-                  <li>SSIS</li>
-                  <li>SQL Server</li>
-                  <li>Oracle</li>
-                  <li>Mirth Connect</li>
-                  <li>HL7 v2</li>
-                </ul>
-                <a href="project.html?id=moh" class="project-link stretched-link">View details <i class="bi bi-arrow-right"></i></a>
-              </article>
-            </div>
-            <!-- End Project Item -->
-
-            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-              <article class="project-card">
-                <div class="project-icon"><i class="bi bi-mortarboard"></i></div>
-                <span class="project-client">Private Universities Council, Kuwait</span>
-                <h4>Student Registration &amp; Scholarship Platform</h4>
-                <p>
-                  A microservices-based ASP.NET Core platform where around
-                  12,000 students per admission cycle apply for scholarships.
-                  Added the private-funding plan type, validated GPA-based seat
-                  allocation and redesigned the Arabic (RTL) admin review UI.
-                </p>
-                <ul class="tag-list">
-                  <li>ASP.NET Core</li>
-                  <li>Microservices</li>
-                  <li>SQL Server</li>
-                  <li>PACI Mobile ID</li>
-                  <li>RTL UI</li>
-                </ul>
-                <a href="project.html?id=puc" class="project-link stretched-link">View details <i class="bi bi-arrow-right"></i></a>
-              </article>
-            </div>
-            <!-- End Project Item -->
-
-            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-              <article class="project-card">
-                <div class="project-icon"><i class="bi bi-shield-lock"></i></div>
-                <span class="project-client">National Cyber Security Center, Kuwait</span>
-                <h4>Vulnerability &amp; Incident Reporting Platform</h4>
-                <p>
-                  Architected and implemented a custom platform for reporting
-                  vulnerabilities and incidents, with role-based access control
-                  across four user types, granular permissions, automated email
-                  notifications and status tracking.
-                </p>
-                <ul class="tag-list">
-                  <li>System Architecture</li>
-                  <li>RBAC</li>
-                  <li>Email Notifications</li>
-                  <li>Status Tracking</li>
-                </ul>
-                <a href="project.html?id=ncsc" class="project-link stretched-link">View details <i class="bi bi-arrow-right"></i></a>
-              </article>
-            </div>
-            <!-- End Project Item -->
-
-            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-              <article class="project-card">
-                <div class="project-icon"><i class="bi bi-geo-alt"></i></div>
-                <span class="project-badge"><i class="bi bi-play-circle-fill"></i> Video demo</span>
-                <span class="project-client">Ministry of Education, Kuwait</span>
-                <h4>GIS Mapping Platform</h4>
-                <p>
-                  APIs for the mobile app and core business logic for school and
-                  center mapping. Refactored legacy APIs into a clean layered
-                  architecture without breaking production routes, with PostGIS
-                  queries for boundaries, map pins and location filtering.
-                </p>
-                <ul class="tag-list">
-                  <li>REST APIs</li>
-                  <li>Layered Architecture</li>
-                  <li>PostgreSQL</li>
-                  <li>PostGIS</li>
-                </ul>
-                <a href="project.html?id=moe-gis" class="project-link stretched-link">View details <i class="bi bi-arrow-right"></i></a>
-              </article>
-            </div>
-            <!-- End Project Item -->
-
-            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-              <article class="project-card">
-                <div class="project-icon"><i class="bi bi-heart-pulse"></i></div>
-                <span class="project-client">Remostart</span>
-                <h4>MedSal &ndash; Healthcare Platform</h4>
-                <p>
-                  A web and mobile platform connecting patients with doctors and
-                  pharmacies in the UAE, built by a team of four. Designed the
-                  PostgreSQL database and RESTful APIs, and handled geospatial
-                  data with GeoDjango and PostGIS.
-                </p>
-                <ul class="tag-list">
-                  <li>Python</li>
-                  <li>Django</li>
-                  <li>DRF</li>
-                  <li>GeoDjango</li>
-                  <li>PostgreSQL</li>
-                  <li>Docker</li>
-                </ul>
-                <a href="project.html?id=medsal" class="project-link stretched-link">View details <i class="bi bi-arrow-right"></i></a>
-              </article>
-            </div>
-            <!-- End Project Item -->
-
-            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-              <article class="project-card">
-                <div class="project-icon"><i class="bi bi-cart-check"></i></div>
-                <span class="project-client">WABA International</span>
-                <h4>Shopify Store &amp; Smart Cart</h4>
-                <p>
-                  Feature development and ongoing support for the company's
-                  Shopify store, including a smart cart that shows product
-                  recommendations directly in the cart, plus Python scraping
-                  scripts that collect data for analytics.
-                </p>
-                <ul class="tag-list">
-                  <li>Shopify</li>
-                  <li>Liquid</li>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>Python</li>
-                </ul>
-                <a href="project.html?id=waba-shopify" class="project-link stretched-link">View details <i class="bi bi-arrow-right"></i></a>
-              </article>
-            </div>
-            <!-- End Project Item -->
+          <div class="project-filter" role="group" aria-label="Filter projects" data-aos="fade-up">
+            <button type="button" class="is-active" data-filter="all" aria-pressed="true">All <span>9</span></button>
+            <button type="button" data-filter="work" aria-pressed="false">Professional <span>7</span></button>
+            <button type="button" data-filter="personal" aria-pressed="false">Personal &amp; freelance <span>2</span></button>
           </div>
 
-          <h3 class="projects-group-title mt-5" data-aos="fade-up">Personal &amp; Freelance</h3>
-          <div class="row gy-4">
-            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-              <article class="project-card">
-                <div class="project-icon"><i class="bi bi-compass"></i></div>
-                <span class="project-client">Personal project</span>
-                <h4>Syrian Adventurer Association</h4>
-                <p>
-                  A booking system for a mountain-activities association, with an
-                  admin dashboard that uses AI algorithms to recommend which
-                  activities to create, and a friendly interface for users to
-                  browse and book them.
-                </p>
-                <ul class="tag-list">
-                  <li>Django</li>
-                  <li>DRF</li>
-                  <li>PostgreSQL</li>
-                  <li>PostGIS</li>
-                  <li>React</li>
-                </ul>
-                <a href="project.html?id=syrian-adventurer" class="project-link stretched-link">View details <i class="bi bi-arrow-right"></i></a>
-              </article>
-            </div>
-            <!-- End Project Item -->
+          <div class="project-grid">
+            <article class="project-card" data-category="work" data-aos="fade-up">
+              <div class="pc-top"><span class="pc-icon"><i class="bi bi-robot"></i></span><span class="pc-badge"><i class="bi bi-play-circle-fill"></i> Video demos</span></div>
+              <span class="pc-client">SUHOB &middot; Proof of concept</span>
+              <h3>AI-Powered HR Assistant</h3>
+              <p>The .NET 9 backend for a bilingual AI HR assistant: Entra ID security, real-time chat and voice, and the HR APIs an AI agent calls.</p>
+              <ul class="tag-list"><li>.NET 9</li><li>Entra ID</li><li>WebSockets</li><li>Azure AI Speech</li></ul>
+              <a href="project.html?id=hr-ai-assistant" class="pc-link stretched-link">View project <i class="bi bi-arrow-right"></i></a>
+            </article>
 
-            <div class="col-xl-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-              <article class="project-card">
-                <div class="project-icon"><i class="bi bi-buildings"></i></div>
-                <span class="project-client">Freelance</span>
-                <h4>Amaratlines Website</h4>
-                <p>
-                  A clean, easy-to-navigate website for a Kuwaiti construction
-                  company, showcasing its history, services and a portfolio of
-                  commercial, residential and infrastructure projects.
-                </p>
-                <ul class="tag-list">
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript</li>
-                </ul>
-                <a href="project.html?id=amaratlines" class="project-link stretched-link">View details <i class="bi bi-arrow-right"></i></a>
-              </article>
-            </div>
-            <!-- End Project Item -->
+            <article class="project-card" data-category="work" data-aos="fade-up" data-aos-delay="100">
+              <div class="pc-top"><span class="pc-icon"><i class="bi bi-hospital"></i></span></div>
+              <span class="pc-client">Ministry of Health, Kuwait</span>
+              <h3>KPI Data Entry &amp; Data Warehouse</h3>
+              <p>KPI data entry with Azure OCR, an SSIS data warehouse refreshed every 15 minutes, and HL7 messaging across Kuwait's hospitals.</p>
+              <ul class="tag-list"><li>ASP.NET</li><li>SSIS</li><li>SQL Server</li><li>HL7 v2</li></ul>
+              <a href="project.html?id=moh" class="pc-link stretched-link">View project <i class="bi bi-arrow-right"></i></a>
+            </article>
+
+            <article class="project-card" data-category="work" data-aos="fade-up" data-aos-delay="200">
+              <div class="pc-top"><span class="pc-icon"><i class="bi bi-mortarboard"></i></span></div>
+              <span class="pc-client">Private Universities Council, Kuwait</span>
+              <h3>Student Registration &amp; Scholarships</h3>
+              <p>A microservices platform where around 12,000 students per cycle apply for scholarships: new plan types, seat allocation and an Arabic admin UI.</p>
+              <ul class="tag-list"><li>ASP.NET Core</li><li>Microservices</li><li>SQL Server</li><li>RTL UI</li></ul>
+              <a href="project.html?id=puc" class="pc-link stretched-link">View project <i class="bi bi-arrow-right"></i></a>
+            </article>
+
+            <article class="project-card" data-category="work" data-aos="fade-up">
+              <div class="pc-top"><span class="pc-icon"><i class="bi bi-shield-lock"></i></span></div>
+              <span class="pc-client">National Cyber Security Center, Kuwait</span>
+              <h3>Vulnerability &amp; Incident Reporting</h3>
+              <p>A reporting platform with role-based access for four user types, granular permissions, email notifications and status tracking.</p>
+              <ul class="tag-list"><li>System Architecture</li><li>RBAC</li><li>Notifications</li></ul>
+              <a href="project.html?id=ncsc" class="pc-link stretched-link">View project <i class="bi bi-arrow-right"></i></a>
+            </article>
+
+            <article class="project-card" data-category="work" data-aos="fade-up" data-aos-delay="100">
+              <div class="pc-top"><span class="pc-icon"><i class="bi bi-geo-alt"></i></span><span class="pc-badge"><i class="bi bi-play-circle-fill"></i> Video demo</span></div>
+              <span class="pc-client">Ministry of Education, Kuwait</span>
+              <h3>GIS Mapping Platform</h3>
+              <p>Mobile APIs and mapping logic for schools and centers, with PostGIS queries and a cleaner layered architecture.</p>
+              <ul class="tag-list"><li>REST APIs</li><li>PostgreSQL</li><li>PostGIS</li></ul>
+              <a href="project.html?id=moe-gis" class="pc-link stretched-link">View project <i class="bi bi-arrow-right"></i></a>
+            </article>
+
+            <article class="project-card" data-category="work" data-aos="fade-up" data-aos-delay="200">
+              <div class="pc-top"><span class="pc-icon"><i class="bi bi-heart-pulse"></i></span></div>
+              <span class="pc-client">Remostart</span>
+              <h3>MedSal &ndash; Healthcare Platform</h3>
+              <p>A web and mobile platform connecting patients in the UAE with doctors and pharmacies, built on a PostgreSQL database and REST APIs.</p>
+              <ul class="tag-list"><li>Python</li><li>Django</li><li>GeoDjango</li><li>PostgreSQL</li></ul>
+              <a href="project.html?id=medsal" class="pc-link stretched-link">View project <i class="bi bi-arrow-right"></i></a>
+            </article>
+
+            <article class="project-card" data-category="work" data-aos="fade-up">
+              <div class="pc-top"><span class="pc-icon"><i class="bi bi-cart-check"></i></span></div>
+              <span class="pc-client">WABA International</span>
+              <h3>Shopify Store &amp; Smart Cart</h3>
+              <p>Feature work and support for WABA's Shopify store, including a smart cart that recommends products right in the cart.</p>
+              <ul class="tag-list"><li>Shopify</li><li>Liquid</li><li>Python</li></ul>
+              <a href="project.html?id=waba-shopify" class="pc-link stretched-link">View project <i class="bi bi-arrow-right"></i></a>
+            </article>
+
+            <article class="project-card" data-category="personal" data-aos="fade-up" data-aos-delay="100">
+              <div class="pc-top"><span class="pc-icon"><i class="bi bi-compass"></i></span></div>
+              <span class="pc-client">Personal project</span>
+              <h3>Syrian Adventurer Association</h3>
+              <p>An activity booking system with an admin dashboard that uses AI algorithms to recommend which activities to create.</p>
+              <ul class="tag-list"><li>Django</li><li>PostGIS</li><li>React</li></ul>
+              <a href="project.html?id=syrian-adventurer" class="pc-link stretched-link">View project <i class="bi bi-arrow-right"></i></a>
+            </article>
+
+            <article class="project-card" data-category="personal" data-aos="fade-up" data-aos-delay="200">
+              <div class="pc-top"><span class="pc-icon"><i class="bi bi-buildings"></i></span></div>
+              <span class="pc-client">Freelance</span>
+              <h3>Amaratlines Website</h3>
+              <p>A website for a Kuwaiti construction company, showcasing its services and a portfolio of its projects.</p>
+              <ul class="tag-list"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <a href="project.html?id=amaratlines" class="pc-link stretched-link">View project <i class="bi bi-arrow-right"></i></a>
+            </article>
           </div>
         </div>
       </section>
-      <!-- /Projects Section -->
 
-      <!-- Certificates Section -->
-      <section id="certificates" class="certificates section light-background">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <span class="description-title">Certificates</span>
-          <h2>Certificates</h2>
-          <p>Professional certifications. Select a certificate to view it.</p>
+      <!-- ======================= Certificates ======================= -->
+      <section id="certificates" class="certificates section section-alt">
+        <div class="container section-head" data-aos="fade-up">
+          <span class="section-label"><b>04</b> Certificates</span>
+          <h2>Certifications</h2>
+          <p>Select a certificate to view the credential.</p>
         </div>
-        <!-- End Section Title -->
 
         <div class="container">
-          <div class="row gy-4">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <a
-                href="https://drive.google.com/file/d/1twF37LVqglIn0zsl0g-gbmTQkCIe4ado/view?usp=drive_link"
-                class="certificate-card"
-                target="_blank"
-                rel="noopener"
-              >
-                <div class="certificate-icon cert-aws" aria-hidden="true">
-                  <i class="bi bi-code-slash"></i>
-                </div>
-                <div class="certificate-body">
-                  <h4>AWS Certified Developer &ndash; Associate</h4>
-                  <p class="certificate-issuer"><i class="bi bi-amazon"></i> Amazon Web Services</p>
-                  <div class="certificate-meta">
-                    <span class="certificate-year">2026</span>
-                    <span class="certificate-view">View certificate <i class="bi bi-box-arrow-up-right"></i></span>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <a
-                href="https://drive.google.com/file/d/138YvAvVSjOOvtTJNG0Uq7_hjbXqnVy7Z/view?usp=drive_link"
-                class="certificate-card"
-                target="_blank"
-                rel="noopener"
-              >
-                <div class="certificate-icon cert-azure" aria-hidden="true">
-                  <i class="bi bi-database-gear"></i>
-                </div>
-                <div class="certificate-body">
-                  <h4>Microsoft Certified: Azure Database Administrator Associate</h4>
-                  <p class="certificate-issuer"><i class="bi bi-microsoft"></i> Microsoft</p>
-                  <div class="certificate-meta">
-                    <span class="certificate-year">2026</span>
-                    <span class="certificate-view">View certificate <i class="bi bi-box-arrow-up-right"></i></span>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <a
-                href="https://drive.google.com/file/d/12tgua8RQabVTicNmnRXzkX1JZZQ8_vh7/view?usp=drive_link"
-                class="certificate-card"
-                target="_blank"
-                rel="noopener"
-              >
-                <div class="certificate-icon cert-azure-ai" aria-hidden="true">
-                  <i class="bi bi-robot"></i>
-                </div>
-                <div class="certificate-body">
-                  <h4>Microsoft Certified: Azure AI Engineer Associate</h4>
-                  <p class="certificate-issuer"><i class="bi bi-microsoft"></i> Microsoft</p>
-                  <div class="certificate-meta">
-                    <span class="certificate-year">2025</span>
-                    <span class="certificate-view">View certificate <i class="bi bi-box-arrow-up-right"></i></span>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <a
-                href="https://drive.google.com/file/d/121wGuQmTItgM2MSyzz44llJ8y5XWBEFv/view?usp=drive_link"
-                class="certificate-card"
-                target="_blank"
-                rel="noopener"
-              >
-                <div class="certificate-icon cert-backend" aria-hidden="true">
-                  <i class="bi bi-server"></i>
-                </div>
-                <div class="certificate-body">
-                  <h4>Backend Developer</h4>
-                  <p class="certificate-issuer"><i class="bi bi-building"></i> Remostart</p>
-                  <div class="certificate-meta">
-                    <span class="certificate-year">2024</span>
-                    <span class="certificate-view">View certificate <i class="bi bi-box-arrow-up-right"></i></span>
-                  </div>
-                </div>
-              </a>
-            </div>
+          <div class="cert-grid">
+            <a class="cert-card" href="https://drive.google.com/file/d/1twF37LVqglIn0zsl0g-gbmTQkCIe4ado/view?usp=drive_link" target="_blank" rel="noopener" data-aos="fade-up">
+              <span class="cert-icon cert-aws" aria-hidden="true"><i class="bi bi-code-slash"></i></span>
+              <span class="cert-year">2026</span>
+              <h3>AWS Certified Developer &ndash; Associate</h3>
+              <span class="cert-issuer"><i class="bi bi-amazon"></i> Amazon Web Services</span>
+              <span class="cert-view">View credential <i class="bi bi-arrow-up-right"></i></span>
+            </a>
+            <a class="cert-card" href="https://drive.google.com/file/d/138YvAvVSjOOvtTJNG0Uq7_hjbXqnVy7Z/view?usp=drive_link" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="100">
+              <span class="cert-icon cert-azure" aria-hidden="true"><i class="bi bi-database-gear"></i></span>
+              <span class="cert-year">2026</span>
+              <h3>Azure Database Administrator Associate</h3>
+              <span class="cert-issuer"><i class="bi bi-microsoft"></i> Microsoft Certified</span>
+              <span class="cert-view">View credential <i class="bi bi-arrow-up-right"></i></span>
+            </a>
+            <a class="cert-card" href="https://drive.google.com/file/d/12tgua8RQabVTicNmnRXzkX1JZZQ8_vh7/view?usp=drive_link" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="200">
+              <span class="cert-icon cert-azure-ai" aria-hidden="true"><i class="bi bi-robot"></i></span>
+              <span class="cert-year">2025</span>
+              <h3>Azure AI Engineer Associate</h3>
+              <span class="cert-issuer"><i class="bi bi-microsoft"></i> Microsoft Certified</span>
+              <span class="cert-view">View credential <i class="bi bi-arrow-up-right"></i></span>
+            </a>
+            <a class="cert-card" href="https://drive.google.com/file/d/121wGuQmTItgM2MSyzz44llJ8y5XWBEFv/view?usp=drive_link" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="300">
+              <span class="cert-icon cert-backend" aria-hidden="true"><i class="bi bi-server"></i></span>
+              <span class="cert-year">2024</span>
+              <h3>Backend Developer</h3>
+              <span class="cert-issuer"><i class="bi bi-building"></i> Remostart</span>
+              <span class="cert-view">View credential <i class="bi bi-arrow-up-right"></i></span>
+            </a>
           </div>
         </div>
       </section>
-      <!-- /Certificates Section -->
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact section">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <span class="description-title">Contact</span>
-          <h2>Contact</h2>
-          <p>Have a project or a role in mind? I'd be happy to hear from you.</p>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="col-lg-4">
-              <a href="https://wa.me/96590956148" target="_blank" rel="noopener">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-whatsapp"></i>
-                  <h3>WhatsApp</h3>
-                  <p class="contact-links">+965 90956148</p>
-                </div>
-              </a>
-            </div>
-            <!-- End Info Item -->
-
-            <div class="col-lg-4">
-              <a href="tel:+96590956148">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center info-item-borders">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Call</h3>
-                  <p class="contact-links">+965 90956148</p>
-                </div>
-              </a>
-            </div>
-            <!-- End Info Item -->
-
-            <div class="col-lg-4">
-              <a href="mailto:tareqdab2000@gmail.com">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Email Me</h3>
-                  <p class="contact-links">tareqdab2000@gmail.com</p>
-                </div>
-              </a>
-            </div>
-            <!-- End Info Item -->
-          </div>
-
-          <div id="download-cv" class="cv-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="cv-card-text">
-              <h2>View or Download My CV</h2>
-              <p>The full picture of my experience, skills and certifications in one PDF.</p>
-            </div>
-            <div class="cv-card-actions">
-              <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="btn-download-cv"><i class="bi bi-download"></i> Download CV</a>
-              <a href="assets/Tareq-Dabaan-CV.pdf" target="_blank" rel="noopener" class="btn-view-cv"><i class="bi bi-eye"></i> View CV</a>
-            </div>
-          </div>
-          <!-- End CV Card -->
-        </div>
-      </section>
-      <!-- /Contact Section -->
-
-      <!-- Skills Section -->
-      <section id="skills" class="skills section light-background">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <span class="description-title">Skills</span>
-          <h2>Technical Skills</h2>
+      <!-- ======================= Skills ======================= -->
+      <section id="skills" class="skills section">
+        <div class="container section-head" data-aos="fade-up">
+          <span class="section-label"><b>05</b> Skills</span>
+          <h2>Technical skills</h2>
           <p>The languages, frameworks and tools I work with.</p>
         </div>
-        <!-- End Section Title -->
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container" data-aos="fade-up">
           <div class="skills-list">
             <div class="skills-row">
               <h3>Backend</h3>
-              <ul class="tag-list">
-                <li>ASP.NET Core</li>
-                <li>ASP.NET MVC</li>
-                <li>ASP.NET Web API</li>
-                <li>Python</li>
-                <li>Django</li>
-                <li>Django REST Framework</li>
-              </ul>
+              <ul class="tag-list"><li>ASP.NET Core</li><li>ASP.NET MVC</li><li>ASP.NET Web API</li><li>Python</li><li>Django</li><li>Django REST Framework</li></ul>
             </div>
             <div class="skills-row">
               <h3>Databases</h3>
-              <ul class="tag-list">
-                <li>SQL</li>
-                <li>MySQL</li>
-                <li>PostgreSQL</li>
-              </ul>
+              <ul class="tag-list"><li>SQL</li><li>MySQL</li><li>PostgreSQL</li></ul>
             </div>
             <div class="skills-row">
               <h3>Cloud &amp; DevOps</h3>
-              <ul class="tag-list">
-                <li>Microsoft Azure</li>
-                <li>Docker &amp; Containerization</li>
-              </ul>
+              <ul class="tag-list"><li>Microsoft Azure</li><li>Docker &amp; Containerization</li></ul>
             </div>
             <div class="skills-row">
               <h3>API Tools</h3>
-              <ul class="tag-list">
-                <li>Postman</li>
-                <li>Swagger</li>
-              </ul>
+              <ul class="tag-list"><li>Postman</li><li>Swagger</li></ul>
             </div>
             <div class="skills-row">
               <h3>Practices</h3>
-              <ul class="tag-list">
-                <li>Git</li>
-                <li>Jira</li>
-                <li>Agile Methodologies</li>
-                <li>UML Diagrams</li>
-                <li>Design Patterns</li>
-                <li>OOP</li>
-              </ul>
+              <ul class="tag-list"><li>Git</li><li>Jira</li><li>Agile Methodologies</li><li>UML Diagrams</li><li>Design Patterns</li><li>OOP</li></ul>
             </div>
           </div>
         </div>
       </section>
-      <!-- /Skills Section -->
+
+      <!-- ======================= Contact ======================= -->
+      <section id="contact" class="contact section dark-background">
+        <div class="container">
+          <div class="contact-inner" data-aos="fade-up">
+            <span class="section-label"><b>06</b> Contact</span>
+            <h2>Let's build something <em>that just works.</em></h2>
+            <p class="contact-lead">Have a project or a role in mind? I'd be happy to hear from you.</p>
+
+            <a class="contact-email" href="mailto:tareqdab2000@gmail.com">tareqdab2000@gmail.com <i class="bi bi-arrow-up-right"></i></a>
+
+            <div class="contact-actions">
+              <a href="https://wa.me/96590956148" target="_blank" rel="noopener" class="btn-download-cv"><i class="bi bi-whatsapp"></i> WhatsApp me</a>
+              <a href="tel:+96590956148" class="btn-view-cv"><i class="bi bi-telephone"></i> +965 90956148</a>
+              <a href="assets/Tareq-Dabaan-CV.pdf" download="Tareq-Dabaan-CV.pdf" class="btn-view-cv"><i class="bi bi-download"></i> Download CV</a>
+              <a href="assets/Tareq-Dabaan-CV.pdf" target="_blank" rel="noopener" class="btn-view-cv"><i class="bi bi-eye"></i> View CV</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer id="footer" class="footer position-relative dark-background">
-      <div class="container">
-        <h3 class="sitename">Tareq Dabaan</h3>
-        <p>Feel free to connect with me on my social media accounts.</p>
-        <div class="social-links d-flex justify-content-center">
-          <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" class="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://github.com/tareqDabaan" class="github" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://wa.me/96590956148" class="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-        </div>
-        <div class="copyright">
-          <span>&copy; <span id="copyright-year">2026</span></span>
-          <strong class="px-1 sitename">Tareq Dabaan</strong>
-          <span>All Rights Reserved</span>
+    <!-- ======================= Footer ======================= -->
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-inner">
+        <a href="#hero" class="logo" aria-label="Tareq Dabaan, back to top">
+          <span class="logo-mark" aria-hidden="true">TD</span>
+          <span class="logo-name">Tareq Dabaan</span>
+        </a>
+        <p class="footer-copy">&copy; <span id="copyright-year">2026</span> Tareq Dabaan &middot; Kuwait City</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/tareq-dabaan-647513225/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/tareqDabaan" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://wa.me/96590956148" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>
     </footer>
 
-    <!-- Scroll Top -->
-    <a
-      href="#"
-      id="scroll-top"
-      class="scroll-top d-flex align-items-center justify-content-center"
-      aria-label="Back to top"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+    <a href="#hero" id="scroll-top" class="scroll-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts -->
     <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-    <!-- Project data and the "Watch the demos" strip -->
-    <script src="assets/js/projects-data.js?v=20261105"></script>
-    <script src="assets/js/demo-strip.js?v=20261105"></script>
-
-    <!-- Main JS File -->
-    <script src="assets/js/main.js?v=20261105"></script>
+    <script src="assets/js/projects-data.js?v=20261106"></script>
+    <script src="assets/js/demo-strip.js?v=20261106"></script>
+    <script src="assets/js/main.js?v=20261106"></script>
   </body>
 </html>
